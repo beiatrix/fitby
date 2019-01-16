@@ -1,5 +1,5 @@
 {
-  "name": "boilermaker",
+  "name": "fitby",
   "version": "1.0.0",
   "description": "Some boilerplate code to get you started - get shakin'!",
   "engines": {
@@ -34,7 +34,7 @@
       "git add"
     ]
   },
-  "author": "Fullstack Academy of Code",
+  "author": "Beiatrix @ Fullstack Academy of Code",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
@@ -43,7 +43,7 @@
     "express": "^4.16.3",
     "express-session": "^1.15.1",
     "history": "^4.6.3",
-    "morgan": "^1.8.1",
+    "morgan": "^1.9.1",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "pg": "^6.1.2",
