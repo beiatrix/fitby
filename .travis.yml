@@ -16,12 +16,12 @@ install:
 before_script:
   - psql -c 'create database "fitby";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
 
-# before_deploy:
-#   - npm run build-client # make the bundle
-#   - rm -rf node_modules # omit from the tarball, since we skip cleanup
-# deploy:
-#   skip_cleanup: true # prevents travis from deleting the build
-#   provider: heroku
-#   app: YOUR-HEROKU-APP-NAME-HERE # see README
-#   api_key:
-#     secure: YOUR-***ENCRYPTED***-API-KEY-HERE # see README
+before_deploy:
+  - npm run build-client # make the bundle
+  - rm -rf node_modules # omit from the tarball, since we skip cleanup
+deploy:
+  skip_cleanup: true # prevents travis from deleting the build
+  provider: heroku
+  app: fitby # see README
+  api_key:
+    secure: 'q7QePi3bYrMqnsWSmdrbVBgEGyr+gvIFeYS9Wosto/ffsGqCyWBvxqia4adSurgQS0qSQhlVdZAa+jpUjjw/CiE0klhO/K06qR/tgX8hNehxHY5a7NZSI70FXXaE/zgYXelDVufPP+faILe6Dk8KvMxWDaRA6wiM1bg7g1uEfUCoCzFjhllqxuyttqsQIGQBQbq53HTtUOaXR4wSaAgYJFW7VQriviIp6U/7mHIY3O/diDQ/cW15SwbfdVS9g+a8Yh+pkCHMk6eLuO6XBzINBVPrFkVFjQepHQSnkYaN8LT1KOeHkYrtU8hBewtTs+Qf1JyoMRls3btdF78+0e78OeGTXXrQzslxHPdpjie+8vE3e4da3B9hFMoBZ1Z8GHwR8t9nVE8+sbAT5tQ2WpNBcmC4Fv9Le/hce30SBfE6rdERdPrg9rQqJ7RHZQnLhR2hRtqodXlPyDMFO/pDAZif7xdo6p1eDZXMu+tQHcaYIvASctk6eLTR6/ItzHJwCl7GzxKKWhFB0bG7j8XIFwMkVTnbeNa5oMjVTpZVeHQXybOSaQijnRMo8t9p1rK/KIpMlTpXZCs+T7cItrnC6I69JB3GrvY0u0M8o4Sm8mg3qQB3dEyPMhfhQp+111P+q9jfcoGOQyVzWbGOOLc0QQYvhwne8yBQlA23pDTThKsOmg4=' # see README
