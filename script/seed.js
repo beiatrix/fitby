@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Note, Food, Measurement, Daily} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
@@ -11,6 +11,8 @@ async function seed() {
     User.create({
       firstName: 'Cody',
       lastName: 'Pug',
+      photo:
+        'https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60',
       email: 'cody@email.com',
       password: '123'
     }),
@@ -18,9 +20,26 @@ async function seed() {
       firstName: 'Murphy',
       lastName: 'Mullaly',
       email: 'murphy@email.com',
+      photo:
+        'https://images.unsplash.com/photo-1537151672256-6caf2e9f8c95?ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80',
       password: '123'
     })
   ])
+
+  // const foods = await Promise.all([
+  //   Food.create({
+  //     name: 'banana',
+  //     healthy: true
+  //   }),
+  //   Food.create({
+  //     name: 'oatmeal',
+  //     healthy: true
+  //   }),
+  //   Food.create({
+  //     name: 'cheeseburger & fries',
+  //     healthy: false
+  //   })
+  // ])
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)
