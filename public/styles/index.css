@@ -157,6 +157,10 @@ p {
   text-transform: lowercase;
 }
 
+img {
+  width: 200px;
+  height: auto;
+}
 /*
  * ==================== NAVBAR ====================
 */

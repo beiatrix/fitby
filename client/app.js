@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <PersistentDrawer />
-      <Routes />
+      {/* <Routes /> */}
       <Footer />
     </div>
   )
