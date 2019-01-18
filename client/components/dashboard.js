@@ -144,7 +144,7 @@ class Dashboard extends React.Component {
               noWrap
               className={classes.title}
             >
-              Dashboard
+              fitby
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -173,7 +173,7 @@ class Dashboard extends React.Component {
           <Divider />
           <List>{secondaryListItems}</List>
         </Drawer>
-        <main className={classes.content}>
+        {/* <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Typography variant="h4" gutterBottom component="h2">
             Orders
@@ -181,10 +181,7 @@ class Dashboard extends React.Component {
           <Typography component="div" className={classes.chartContainer}>
             <SimpleLineChart />
           </Typography>
-          <Typography variant="h4" gutterBottom component="h2">
-            Products
-          </Typography>
-        </main>
+        </main> */}
       </div>
     )
   }
