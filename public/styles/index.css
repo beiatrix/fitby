@@ -101,8 +101,10 @@
 */
 
 :root {
+  --lightgray: #f1f1f1;
   --darkgray: #3b3b3b;
   --lavender: #9983ee;
+  --purple: #5734e3;
 }
 
 /*
@@ -294,4 +296,41 @@ footer {
     #4a00e0,
     #8e2de2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#addMeasurement {
+  width: 300px;
+}
+
+#addMeasurementHeader {
+  background: var(--lavender);
+  letter-spacing: 0.1rem;
+  padding: 1rem 0 1rem 1rem;
+  /* color: white; */
+  /* font-family: CircularStd, sans-serif; */
+  font-size: 1rem;
+}
+
+#addMeasurementHeader h3 {
+  text-transform: uppercase;
+}
+
+#addMeasurementContent {
+  background: var(--lightgray);
+}
+
+#addMeasurementSubmit {
+  background: var(--purple);
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+#addMeasurement h5 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--purple);
 }
