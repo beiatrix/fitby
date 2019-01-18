@@ -35,6 +35,7 @@ class Routes extends Component {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/nutrition" component={Nutrition} />
             <Route path="/fitness" component={Fitness} />
+            <Route path="/profile" component={UserHome} />
             <Route path="/home" component={Fitness} />
           </Switch>
         )}

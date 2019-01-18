@@ -1,12 +1,12 @@
 import React from 'react'
 
-import {Navbar, Footer} from './components'
+import {Footer, PersistentDrawer} from './components'
 import Routes from './routes'
 
 const App = () => {
   return (
     <div>
-      <Navbar />
+      <PersistentDrawer />
       <Routes />
       <Footer />
     </div>
