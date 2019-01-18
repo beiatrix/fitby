@@ -20,7 +20,11 @@ import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
 import PersonIcon from '@material-ui/icons/PersonRounded'
 import Button from '@material-ui/core/Button'
+
 import Routes from '../routes'
+import {connect} from 'react-redux'
+import {withRouter, Link} from 'react-router-dom'
+import {logout} from '../store'
 
 const drawerWidth = 240
 
@@ -97,8 +101,9 @@ class PersistentDrawer extends React.Component {
   }
 
   render() {
-    const {classes, theme} = this.props
+    const {classes, theme, handleClick, isLoggedIn} = this.props
     const {open} = this.state
+    console.log(this.props)
 
     return (
       <div className={classes.root}>
@@ -120,14 +125,32 @@ class PersistentDrawer extends React.Component {
               <MenuIcon />
             </IconButton>
             <h2>fitby</h2>
+            {isLoggedIn ? (
+              <div>
+                {/* The navbar will show these links after you log in */}
 
-            <IconButton color="inherit">
-              <PersonIcon />
-            </IconButton>
-            <Button color="inherit">Log Out</Button>
-
-            <Button color="inherit">Login</Button>
-            <Button color="inherit">Sign Up</Button>
+                <Link to="/profile">
+                  <IconButton color="inherit">
+                    <PersonIcon />
+                  </IconButton>
+                </Link>
+                <Button color="inherit">
+                  <a href="#" onClick={handleClick}>
+                    Log Out
+                  </a>
+                </Button>
+              </div>
+            ) : (
+              <div>
+                {/* The navbar will show these links before you log in */}
+                <Button color="inherit">
+                  <Link to="/login">Login</Link>
+                </Button>
+                <Button color="inherit">
+                  <Link to="/signup">Sign Up</Link>
+                </Button>
+              </div>
+            )}
           </Toolbar>
         </AppBar>
         <Drawer
@@ -184,9 +207,39 @@ class PersistentDrawer extends React.Component {
   }
 }
 
-PersistentDrawer.propTypes = {
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+/**
+ * CONTAINER
+ */
+const mapState = state => {
+  return {
+    isLoggedIn: !!state.user.id
+  }
 }
 
-export default withStyles(styles, {withTheme: true})(PersistentDrawer)
+const mapDispatch = dispatch => {
+  return {
+    handleClick() {
+      dispatch(logout())
+    }
+  }
+}
+
+/**
+ * PROP TYPES
+ */
+PersistentDrawer.propTypes = {
+  classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired
+}
+
+const StyledPersistentDrawer = withStyles(styles, {withTheme: true})(
+  PersistentDrawer
+)
+
+export default withRouter(
+  connect(mapState, mapDispatch)(StyledPersistentDrawer)
+)
+
+// export default connect(mapState, mapDispatch)(StyledPersistentDrawer)
