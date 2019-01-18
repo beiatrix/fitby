@@ -146,6 +146,19 @@ a {
 }
 
 /*
+ * ==================== FOOTER ====================
+*/
+
+footer {
+  width: 100vw;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+}
+
+/*
  * ==================== HOME PAGE ====================
 */
 
@@ -170,7 +183,7 @@ a {
 
 #userHome h1 {
   margin: 2rem 0 2rem 0;
-  font-size: 4rem;
+  font-size: 200%;
   font-weight: 600;
 }
 

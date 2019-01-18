@@ -15,16 +15,19 @@ export const UserHome = props => {
         <div id="userPhoto">
           <img src={user.photo} />
         </div>
-        <div id="userInfo">
-          <div id="userLeft">
-            <h4>First Name</h4>
-            <h4>Last Name</h4>
-            <h4>Email</h4>
-          </div>
-          <div id="userRight">
-            <p>{user.firstName}</p>
-            <p>{user.lastName}</p>
-            <p>{user.email}</p>
+        <div id="userInfoContainer">
+          <h2>Account</h2>
+          <div id="userInfo">
+            <div id="userLeft">
+              <h4>First Name</h4>
+              <h4>Last Name</h4>
+              <h4>Email</h4>
+            </div>
+            <div id="userRight">
+              <p>{user.firstName}</p>
+              <p>{user.lastName}</p>
+              <p>{user.email}</p>
+            </div>
           </div>
         </div>
       </div>
