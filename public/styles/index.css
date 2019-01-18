@@ -103,6 +103,7 @@
 :root {
   --darkgray: #3b3b3b;
   --lavender: #9983ee;
+  --purple: #5734e3;
 }
 
 /*
@@ -294,4 +295,25 @@ footer {
     #4a00e0,
     #8e2de2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#addMeasurement {
+  width: 300px;
+}
+
+#addMeasurementHeader {
+  background: var(--lavender);
+  color: white;
+  font-family: CircularStd, sans-serif;
+  font-size: 1rem;
+}
+
+#addMeasurementSubmit {
+  background: var(--purple);
+}
+
+#addMeasurement h5 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--purple);
 }

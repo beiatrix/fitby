@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import SimpleLineChart from './simpleLineChart'
+import AddMeasurement from './addMeasurement'
 
 const Fitness = props => {
   const {user} = props
@@ -15,6 +16,8 @@ const Fitness = props => {
       <div className="chartContainer">
         <SimpleLineChart />
       </div>
+
+      <AddMeasurement />
 
       <h2>dailies</h2>
       <div id="dailiesContainer">
