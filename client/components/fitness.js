@@ -19,12 +19,12 @@ const Fitness = props => {
 
       <AddMeasurement />
 
-      <h2>dailies</h2>
+      {/* <h2>dailies</h2>
       <div id="dailiesContainer">
         <h4>CARDIO</h4>
         <h4>PROTEIN</h4>
         <h4>YOGA</h4>
-      </div>
+      </div> */}
     </div>
   )
 }
