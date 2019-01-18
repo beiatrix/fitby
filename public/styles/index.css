@@ -1,26 +1,6 @@
-body {
-  font-family: sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-label {
-  display: block;
-}
-
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
-}
-
-/* FONT */
+/*
+ * ==================== FONT ====================
+*/
 
 /* CircularStd @font-face kit */
 @font-face {
@@ -116,31 +96,33 @@ form div {
   font-style: italic;
 }
 
+/*
+ * ==================== COLORS ====================
+*/
+
+:root {
+  --darkgray: #3b3b3b;
+  --lavender: #9983ee;
+}
+
+/*
+ * ==================== GLOBAL ====================
+*/
+
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
 }
 
 body {
-  /* https://uigradients.com/#Ash */
-
-  background: #606c88; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #3f4c6b,
-    #606c88
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #3f4c6b,
-    #606c88
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  margin: 0;
+  background: url('../img/splash-BG-sm.jpg') no-repeat fixed;
+  background-size: cover;
   font-family: CircularStd, sans-serif;
   color: white;
 }
@@ -150,7 +132,166 @@ h2,
 h3,
 h4 {
   font-family: CircularStd, sans-serif;
-  /* text-transform: uppercase; */
-  /* letter-spacing: 0.2rem; */
-  /* color: white; */
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+a {
+  color: var(--darkgray);
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+a:visited {
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--lavender);
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+p {
+  text-transform: lowercase;
+}
+
+/*
+ * ==================== NAVBAR ====================
+*/
+
+#navbar {
+  display: flex;
+  background-color: whitesmoke;
+}
+#navbar label {
+  display: block;
+}
+#navbar a {
+  display: inline-block;
+  margin: 1em;
+}
+#navbar form div {
+  margin: 1em;
+  display: inline-block;
+}
+#nav-brand {
+  color: var(--darkgray);
+}
+
+/*
+ * ==================== FOOTER ====================
+*/
+
+footer {
+  width: 100vw;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkgray);
+}
+
+/*
+ * ==================== HOME PAGE ====================
+*/
+
+#home {
+  height: 100vh;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*
+ * ==================== LOGIN ====================
+*/
+
+#loginContainer {
+  height: 100vh;
+}
+
+/*
+ * ==================== USER PROFILE ====================
+*/
+
+#userHomeContainer {
+  width: 80vw;
+  height: 100vh;
+  margin: auto;
+}
+
+#userHome {
+  display: flex;
+  width: 80vw;
+  margin: auto;
+}
+
+#userHome h1 {
+  margin: 2rem 0 2rem 0;
+  font-size: 200%;
+  font-weight: 600;
+}
+
+#userPhoto {
+  max-width: 50%;
+  height: auto;
+}
+
+#userInfo {
+  width: 50%;
+  display: flex;
+}
+
+#userLeft {
+  border: 3px solid red;
+}
+
+#userLeft h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+#userRight {
+  border: 3px solid red;
+}
+
+/*
+ * ==================== NUTRITION ====================
+*/
+
+#nutritionContainer {
+  height: 100vh;
+  background: #02aab0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #00cdac,
+    #02aab0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #00cdac,
+    #02aab0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*
+ * ==================== FITNESS ====================
+*/
+
+#fitnessContainer {
+  height: 100vh;
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
