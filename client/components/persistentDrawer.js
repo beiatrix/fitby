@@ -18,6 +18,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
+import PersonIcon from '@material-ui/icons/PersonRounded'
+import Button from '@material-ui/core/Button'
 import Routes from '../routes'
 
 const drawerWidth = 240
@@ -40,6 +42,8 @@ const styles = theme => ({
       duration: theme.transitions.duration.enteringScreen
     })
   },
+  appBarSpacer: theme.mixins.toolbar,
+
   menuButton: {
     marginLeft: 12,
     marginRight: 20
@@ -100,6 +104,7 @@ class PersistentDrawer extends React.Component {
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
+          color="default"
           position="fixed"
           className={classNames(classes.appBar, {
             [classes.appBarShift]: open
@@ -114,9 +119,15 @@ class PersistentDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" noWrap>
-              Persistent drawer
-            </Typography>
+            <h2>fitby</h2>
+
+            <IconButton color="inherit">
+              <PersonIcon />
+            </IconButton>
+            <Button color="inherit">Log Out</Button>
+
+            <Button color="inherit">Login</Button>
+            <Button color="inherit">Sign Up</Button>
           </Toolbar>
         </AppBar>
         <Drawer
