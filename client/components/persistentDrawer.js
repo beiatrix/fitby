@@ -16,15 +16,15 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import MailIcon from '@material-ui/icons/Mail'
 import PersonIcon from '@material-ui/icons/PersonRounded'
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenterRounded'
+import KitchenIcon from '@material-ui/icons/Kitchen'
 import Button from '@material-ui/core/Button'
 
 import Routes from '../routes'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
-import {logout} from '../store'
+// import {dark} from '@material-ui/core/styles/createPalette'
 
 const drawerWidth = 240
 
@@ -102,8 +102,8 @@ class PersistentDrawer extends React.Component {
 
   render() {
     const {classes, theme, handleClick, isLoggedIn} = this.props
-    const {open} = this.state
     console.log(this.props)
+    const {open} = this.state
 
     return (
       <div className={classes.root}>
@@ -124,21 +124,29 @@ class PersistentDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <h2>fitby</h2>
+            <Link to="/home">
+              <h2>fitby</h2>
+            </Link>
             {isLoggedIn ? (
               <div>
                 {/* The navbar will show these links after you log in */}
+                <Link to="/fitness">
+                  <IconButton color="inherit">
+                    <FitnessCenterIcon />
+                  </IconButton>
+                </Link>
+
+                <Link to="/nutrition">
+                  <IconButton color="inherit">
+                    <KitchenIcon />
+                  </IconButton>
+                </Link>
 
                 <Link to="/profile">
                   <IconButton color="inherit">
                     <PersonIcon />
                   </IconButton>
                 </Link>
-                <Button color="inherit">
-                  <a href="#" onClick={handleClick}>
-                    Log Out
-                  </a>
-                </Button>
               </div>
             ) : (
               <div>
@@ -173,10 +181,10 @@ class PersistentDrawer extends React.Component {
           </div>
           <Divider />
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            {['Fitness', 'Nutrition'].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? <FitnessCenterIcon /> : <KitchenIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
@@ -184,10 +192,10 @@ class PersistentDrawer extends React.Component {
           </List>
           <Divider />
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            {['Fitness', 'Nutrition'].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? <FitnessCenterIcon /> : <KitchenIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
@@ -216,30 +224,15 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    handleClick() {
-      dispatch(logout())
-    }
-  }
-}
-
 /**
  * PROP TYPES
  */
 PersistentDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
-  handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
 
-const StyledPersistentDrawer = withStyles(styles, {withTheme: true})(
-  PersistentDrawer
-)
-
 export default withRouter(
-  connect(mapState, mapDispatch)(StyledPersistentDrawer)
+  connect(mapState)(withStyles(styles, {withTheme: true})(PersistentDrawer))
 )
-
-// export default connect(mapState, mapDispatch)(StyledPersistentDrawer)
