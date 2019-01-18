@@ -1,4 +1,6 @@
-/* FONT */
+/*
+ * ==================== FONT ====================
+*/
 
 /* CircularStd @font-face kit */
 @font-face {
@@ -94,6 +96,19 @@
   font-style: italic;
 }
 
+/*
+ * ==================== COLORS ====================
+*/
+
+:root {
+  --darkgray: #3b3b3b;
+  --lavender: #9983ee;
+}
+
+/*
+ * ==================== GLOBAL ====================
+*/
+
 html {
   box-sizing: border-box;
 }
@@ -122,7 +137,24 @@ h4 {
 }
 
 a {
+  color: var(--darkgray);
+  text-transform: lowercase;
   text-decoration: none;
+}
+
+a:visited {
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--lavender);
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+p {
+  text-transform: lowercase;
 }
 
 /*
@@ -144,6 +176,9 @@ a {
   margin: 1em;
   display: inline-block;
 }
+#nav-brand {
+  color: var(--darkgray);
+}
 
 /*
  * ==================== FOOTER ====================
@@ -155,7 +190,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: darkgray;
+  background-color: var(--darkgray);
 }
 
 /*
@@ -231,13 +266,32 @@ footer {
   height: 100vh;
   background: #02aab0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    to right,
+    to left,
     #00cdac,
     #02aab0
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to right,
+    to left,
     #00cdac,
     #02aab0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*
+ * ==================== FITNESS ====================
+*/
+
+#fitnessContainer {
+  height: 100vh;
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
