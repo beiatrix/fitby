@@ -165,13 +165,26 @@ footer {
 #home {
   height: 100vh;
   display: flex;
+  margin: auto;
   flex-direction: column;
   justify-content: center;
 }
 
+/*
+ * ==================== LOGIN ====================
+*/
+
+#loginContainer {
+  height: 100vh;
+}
+
+/*
+ * ==================== USER PROFILE ====================
+*/
+
 #userHomeContainer {
   width: 80vw;
-  height: 80vh;
+  height: 100vh;
   margin: auto;
 }
 
@@ -188,8 +201,10 @@ footer {
 }
 
 #userPhoto {
-  width: 50%;
+  max-width: 50%;
+  height: auto;
 }
+
 #userInfo {
   width: 50%;
   display: flex;
@@ -206,4 +221,23 @@ footer {
 
 #userRight {
   border: 3px solid red;
+}
+
+/*
+ * ==================== NUTRITION ====================
+*/
+
+#nutritionContainer {
+  height: 100vh;
+  background: #02aab0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #00cdac,
+    #02aab0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #00cdac,
+    #02aab0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
