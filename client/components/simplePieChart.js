@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import ResponsiveContainer from 'recharts/lib/component/ResponsiveContainer'
-import {PieChart, Pie, Legend, Tooltip} from 'recharts'
+import {PieChart, Pie, Cell, Tooltip} from 'recharts'
 
+const COLORS = ['#81DEC3', '#68A69F']
 // const data02 = [
 //   {name: 'healthy', value: 72},
 //   {name: 'not-so-healthy', value: 28}
@@ -22,7 +23,11 @@ class SimplePieChart extends Component {
             innerRadius={80}
             outerRadius={240}
             fill="#82ca9d"
-          />
+          >
+            {data.map((entry, index) => (
+              <Cell fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
           <Tooltip />
         </PieChart>
       </ResponsiveContainer>
