@@ -276,6 +276,7 @@ footer {
 }
 
 .error {
+  margin-top: 1rem;
   color: var(--lavender);
 }
 
@@ -505,6 +506,10 @@ footer {
 
 #nutritionRight {
   width: 30%;
+}
+
+#foodCard {
+  width: 300px;
 }
 
 #foodCardHeader {

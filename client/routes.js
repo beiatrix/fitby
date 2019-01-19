@@ -36,7 +36,7 @@ class Routes extends Component {
             <Route path="/nutrition" component={Nutrition} />
             <Route path="/fitness" component={Fitness} />
             <Route path="/profile" component={UserHome} />
-            <Route path="/home" component={UserHome} />
+            <Route path="/" component={Home} />
           </Switch>
         )}
         {/* Displays our Home component as a fallback */}
