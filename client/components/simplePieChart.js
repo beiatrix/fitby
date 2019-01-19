@@ -15,6 +15,7 @@ class SimplePieChart extends Component {
       <ResponsiveContainer width="99%" height={500}>
         <PieChart width={500} height={500} padding={0}>
           <Pie
+            dataKey="value"
             data={data}
             cx={250}
             cy={250}
