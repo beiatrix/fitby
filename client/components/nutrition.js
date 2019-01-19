@@ -16,7 +16,7 @@ class Nutrition extends Component {
 
   // converts array of food to array of health percentage values
   calculateHealth(food) {
-    let percentHealthy =
+    let percentHealthy = +(
       food.reduce((acc, el) => {
         if (el.healthy) {
           acc++
@@ -25,9 +25,12 @@ class Nutrition extends Component {
       }, 0) /
       food.length *
       100
+    ).toFixed(2)
+    let notHealthy = +(100 - percentHealthy).toFixed(2)
+
     return [
       {name: 'healthy', value: percentHealthy},
-      {name: 'not-so-healthy', value: 100 - percentHealthy}
+      {name: 'not-so-healthy', value: notHealthy}
     ]
   }
 
