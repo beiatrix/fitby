@@ -276,6 +276,7 @@ footer {
 }
 
 .error {
+  margin-top: 1rem;
   color: var(--lavender);
 }
 
