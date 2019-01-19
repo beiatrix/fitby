@@ -125,7 +125,7 @@ html {
 }
 
 body {
-  background: url('../img/splash-BG-sm.jpg') no-repeat fixed;
+  background: url('../img/splash-lite.jpg') no-repeat fixed;
   background-size: cover;
   font-family: CircularStd, sans-serif;
   color: white;
@@ -222,6 +222,20 @@ img {
 }
 
 /*
+ * ==================== DRAWER ====================
+*/
+
+#drawerHeader {
+  padding: 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+#drawerTitle {
+  color: white;
+}
+
+/*
  * ==================== FOOTER ====================
 */
 
@@ -239,11 +253,12 @@ footer {
 */
 
 #home {
-  height: 100vh;
+  height: 95vh;
   display: flex;
-  margin: auto;
+  /* margin: auto; */
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 /*
@@ -255,6 +270,7 @@ footer {
 }
 
 #loginContainer {
+  padding-top: 1rem;
   height: 100vh;
 }
 
@@ -284,6 +300,7 @@ footer {
 */
 
 #signupContainer {
+  padding-top: 1rem;
   height: 100vh;
 }
 
@@ -329,12 +346,16 @@ footer {
   height: auto;
 }
 
-#userInfo {
+#userInfoContainer {
   width: 50%;
+}
+
+#userInfo {
   display: flex;
 }
 
 #userLeft {
+  width: 50%;
   border: 3px solid red;
 }
 
@@ -344,6 +365,7 @@ footer {
 }
 
 #userRight {
+  width: 50%;
   border: 3px solid red;
 }
 
@@ -352,7 +374,7 @@ footer {
 */
 
 #nutritionContainer {
-  padding: 2rem 8rem 0 8rem;
+  padding: 2rem 4rem 0 4rem;
   height: 100vh;
   background: #02aab0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -372,7 +394,7 @@ footer {
 */
 
 #fitnessContainer {
-  padding: 2rem 8rem 0 8rem;
+  padding: 2rem 5rem 0 5rem;
   height: 100vh;
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(

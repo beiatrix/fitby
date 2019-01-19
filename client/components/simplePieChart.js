@@ -2,7 +2,10 @@ import React, {Component} from 'react'
 import ResponsiveContainer from 'recharts/lib/component/ResponsiveContainer'
 import {PieChart, Pie, Legend, Tooltip} from 'recharts'
 
-const data02 = [{name: 'healthy', value: 72}, {name: 'not healthy', value: 28}]
+const data02 = [
+  {name: 'healthy', value: 72},
+  {name: 'not-so-healthy', value: 28}
+]
 
 class SimplePieChart extends Component {
   render() {
