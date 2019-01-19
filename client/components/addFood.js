@@ -1,62 +1,22 @@
 import React, {Component} from 'react'
-import Button from '@material-ui/core/Button'
-import Card from '@material-ui/core/Card'
+import {connect} from 'react-redux'
+import {addFood} from '../store'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import CardHeader from '@material-ui/core/CardHeader'
-import Grid from '@material-ui/core/Grid'
-import TextField from '@material-ui/core/TextField'
 import Input from '@material-ui/core/Input'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-
-import Select from '@material-ui/core/Select'
-import {withStyles, withTheme} from '@material-ui/core/styles'
-
-const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    color: 'white',
-    fontWeight: '600',
-    fontFamily: 'CircularStd, sans-serif',
-    letterSpacing: '0.1rem'
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2
-  }
-})
+import Button from '@material-ui/core/Button'
 
 class AddFood extends Component {
-  state = {
-    type: ''
-  }
-
-  componentDidMount() {
-    this.setState({
-      // labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
-    })
-  }
-
-  handleChange = event => {
-    this.setState({[event.target.name]: event.target.value})
-  }
-
   render() {
-    const {classes, day} = this.props
+    const {classes} = this.props
 
     return (
-      <Card id="addFood">
-        <div id="addFoodHeader">
-          <h3>+ ADD TODAY'S FOOD</h3>
-        </div>
+      <div>
         <CardContent>
           <form className={classes.form}>
             <FormControl margin="normal" fullWidth>
@@ -70,16 +30,17 @@ class AddFood extends Component {
             SUBMIT
           </Button>
         </CardActions>
-      </Card>
+      </div>
     )
   }
 }
 
-export default withStyles(styles)(AddFood)
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addNewGrocery: text => dispatch(addGrocery(text))
+//   }
+// }
+// const ConnectedAddGrocery = connect(null, mapDispatchToProps)(AddGrocery)
+// export default ConnectedAddGrocery
 
-// checkbox
-
-/* <FormControlLabel
-  control={<Checkbox value="remember" color="primary" />}
-  label="Remember me"
-/> */
+export default AddFood

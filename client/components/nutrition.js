@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import SimplePieChart from './simplePieChart'
-import AddFood from './addFood'
+import FoodCard from './foodCard'
 
 const Nutrition = props => {
   const {user} = props
@@ -16,7 +16,7 @@ const Nutrition = props => {
         </div>
 
         <div id="nutritionRight">
-          <AddFood />
+          <FoodCard />
         </div>
       </div>
     </div>

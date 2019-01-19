@@ -455,10 +455,6 @@ footer {
   text-transform: uppercase;
 }
 
-#addMeasurementContent {
-  background: var(--lightgray);
-}
-
 #addMeasurementSubmit {
   background: var(--purple);
   text-transform: uppercase;
@@ -507,19 +503,15 @@ footer {
   width: 30%;
 }
 
-#addFoodHeader {
+#foodCardHeader {
   background: var(--jade);
   letter-spacing: 0.1rem;
   padding: 1rem 0 1rem 1rem;
   font-size: 1rem;
 }
 
-#addFoodHeader h3 {
+#foodCardHeader h3 {
   text-transform: uppercase;
-}
-
-#addFoodContent {
-  background: var(--lightgray);
 }
 
 #addFoodSubmit {
