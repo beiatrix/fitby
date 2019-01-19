@@ -1,6 +1,18 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import SimplePieChart from './simplePieChart'
+import AddFood from './addFood'
+
+const weekdays = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+  'Notes'
+]
 
 const Nutrition = props => {
   const {user} = props
@@ -9,6 +21,11 @@ const Nutrition = props => {
     <div id="nutritionContainer">
       <h1>nutrition</h1>
       <SimplePieChart />
+      <div id="foodCards">
+        {weekdays.map((day, idx) => {
+          return <AddFood key={`weekday-${idx}`} day={day} />
+        })}
+      </div>
     </div>
   )
 }

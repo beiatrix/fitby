@@ -105,6 +105,8 @@
   --darkgray: #3b3b3b;
   --lavender: #9983ee;
   --purple: #5734e3;
+  --jade: #479289;
+  --emerald: #0d6166;
 }
 
 /*
@@ -328,9 +330,49 @@ footer {
   font-size: 1rem;
   padding: 0.5rem 0 0.5rem 0;
 }
-
+/*
 #addMeasurement h5 {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: var(--purple);
+} */
+
+/*
+ * ==================== NUTRITION ====================
+*/
+
+#addFoodHeader {
+  background: var(--jade);
+  letter-spacing: 0.1rem;
+  padding: 1rem 0 1rem 1rem;
+  /* color: white; */
+  /* font-family: CircularStd, sans-serif; */
+  font-size: 1rem;
+}
+
+#addFoodHeader h3 {
+  text-transform: uppercase;
+}
+
+#addFoodContent {
+  background: var(--lightgray);
+}
+
+#addFoodSubmit {
+  background: var(--emerald);
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+#foodCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(50px, auto);
+  grid-gap: 2em;
+  padding: 1em;
+  padding-top: 2em;
 }
