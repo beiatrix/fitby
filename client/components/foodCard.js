@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {fetchFood} from '../store'
 
 import AddFood from './addFood'
+import FoodItem from './foodItem'
 
 const styles = theme => ({
   root: {
@@ -27,13 +28,10 @@ const styles = theme => ({
 class FoodCard extends Component {
   async componentDidMount() {
     await this.props.fetchFood()
-    console.log('i got food from the server')
   }
 
   render() {
-    const {classes} = this.props
-    const food = this.props.food
-    console.log('food is in food card component', food)
+    const {classes, food} = this.props
 
     return (
       <Card id="foodCard">
@@ -42,7 +40,7 @@ class FoodCard extends Component {
         </div>
         <div id="foodListContainer">
           {food.map(foodItem => {
-            return <p key={food.id}>{foodItem.name}</p>
+            return <FoodItem key={foodItem.id} food={foodItem} />
           })}
         </div>
         <AddFood classes={classes} />
