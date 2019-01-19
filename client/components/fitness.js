@@ -13,12 +13,13 @@ const Fitness = props => {
 
       <h1>fitness</h1>
       {/* LINE CHART */}
-      <div className="chartContainer">
-        <SimpleLineChart />
+      <div id="fitnessComponents">
+        <div className="chartContainer">
+          <SimpleLineChart />
+        </div>
+
+        <AddMeasurement className="fitnessRight" />
       </div>
-
-      <AddMeasurement />
-
       {/* <h2>dailies</h2>
       <div id="dailiesContainer">
         <h4>CARDIO</h4>

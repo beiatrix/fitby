@@ -55,7 +55,7 @@ class AddFood extends Component {
     return (
       <Card id="addFood">
         <div id="addFoodHeader">
-          <h3>{day}</h3>
+          <h3>+ ADD TODAY'S FOOD</h3>
         </div>
         <CardContent>
           <form className={classes.form}>

@@ -370,32 +370,12 @@ footer {
 }
 
 /*
- * ==================== NUTRITION ====================
-*/
-
-#nutritionContainer {
-  padding: 2rem 4rem 0 4rem;
-  height: 100vh;
-  background: #02aab0; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #00cdac,
-    #02aab0
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #00cdac,
-    #02aab0
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-/*
  * ==================== FITNESS ====================
 */
 
 #fitnessContainer {
   padding: 2rem 5rem 0 5rem;
-  height: 100vh;
+  height: 90vh;
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -407,6 +387,21 @@ footer {
     #4a00e0,
     #8e2de2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#fitnessComponents {
+  display: flex;
+  width: 100%;
+}
+
+.chartContainer {
+  width: 75%;
+  padding-right: 2rem;
+}
+
+.fitnessRight {
+  width: 25%;
+  padding-left: 2rem;
 }
 
 #addMeasurement {
@@ -450,6 +445,30 @@ footer {
  * ==================== NUTRITION ====================
 */
 
+#nutritionContainer {
+  padding: 2rem 4rem 0 4rem;
+  height: 90vh;
+  background: #02aab0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #00cdac,
+    #02aab0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #00cdac,
+    #02aab0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#nutritionLeft {
+  width: 50%;
+}
+
+#nutritionRight {
+  width: 50%;
+}
+
 #addFoodHeader {
   background: var(--jade);
   letter-spacing: 0.1rem;
@@ -475,13 +494,4 @@ footer {
   font-weight: 500;
   font-size: 1rem;
   padding: 0.5rem 0 0.5rem 0;
-}
-
-#foodCards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(50px, auto);
-  grid-gap: 2em;
-  padding: 1em;
-  padding-top: 2em;
 }
