@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {logout} from '../store'
+import Button from '@material-ui/core/Button'
 
 /**
  * COMPONENT
@@ -30,11 +31,11 @@ export const UserHome = props => {
               <p>{user.email}</p>
             </div>
           </div>
-          <button type="button">
+          <Button id="logout">
             <a href="#" onClick={handleClick}>
               Log Out
             </a>
-          </button>
+          </Button>
         </div>
       </div>
     </div>

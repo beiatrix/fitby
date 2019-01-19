@@ -1,85 +1,114 @@
 import React, {Component} from 'react'
-import Button from '@material-ui/core/Button'
-import Card from '@material-ui/core/Card'
+import {connect} from 'react-redux'
+import {postFood} from '../store'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import CardHeader from '@material-ui/core/CardHeader'
-import Grid from '@material-ui/core/Grid'
-import TextField from '@material-ui/core/TextField'
 import Input from '@material-ui/core/Input'
-
 import InputLabel from '@material-ui/core/InputLabel'
-import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Button from '@material-ui/core/Button'
+import Checkbox from '@material-ui/core/Checkbox'
 
-import Select from '@material-ui/core/Select'
-import {withStyles, withTheme} from '@material-ui/core/styles'
+import IconButton from '@material-ui/core/IconButton'
+import AddIcon from '@material-ui/icons/Add'
 
-const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    color: 'white',
-    fontWeight: '600',
-    fontFamily: 'CircularStd, sans-serif',
-    letterSpacing: '0.1rem'
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2
-  }
-})
+import ExpansionPanel from '@material-ui/core/ExpansionPanel'
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
+import Typography from '@material-ui/core/Typography'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 class AddFood extends Component {
-  state = {
-    type: ''
+  constructor() {
+    super()
+    this.state = {
+      name: '',
+      healthy: false
+    }
+    this.handleCheck = this.handleCheck.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-
-  componentDidMount() {
+  handleCheck(event) {
     this.setState({
-      // labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
+      healthy: event.target.value
     })
   }
 
-  handleChange = event => {
-    this.setState({[event.target.name]: event.target.value})
+  handleChange(event) {
+    this.setState({
+      name: event.target.value
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    let newFood = {
+      name: this.state.name,
+      healthy: this.state.healthy
+    }
+    this.props.postFood(newFood)
+    this.setState({
+      name: '',
+      healthy: false
+    })
   }
 
   render() {
-    const {classes, day} = this.props
+    const {classes} = this.props
 
     return (
-      <Card id="addFood">
-        <div id="addFoodHeader">
-          <h3>{day}</h3>
+      <div>
+        <div className={classes.root}>
+          <ExpansionPanel>
+            <ExpansionPanelSummary expandIcon={<AddIcon />} />
+            <form className={classes.form} onSubmit={this.handleSubmit}>
+              <CardContent>
+                {/* food input */}
+                <FormControl margin="none" required fullWidth>
+                  <InputLabel htmlFor="food">enter food</InputLabel>
+                  <Input
+                    onChange={this.handleChange}
+                    name="food"
+                    id="food"
+                    value={this.state.name}
+                  />
+                </FormControl>
+                {/* healthy? */}
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      onChange={this.handleCheck}
+                      value="true"
+                      color="default"
+                    />
+                  }
+                  label="healthy?"
+                />
+              </CardContent>
+              <CardActions>
+                <Button type="submit" id="addFoodSubmit" fullWidth>
+                  SUBMIT
+                </Button>
+              </CardActions>
+            </form>
+          </ExpansionPanel>
         </div>
-        <CardContent>
-          <form className={classes.form}>
-            <FormControl margin="normal" fullWidth>
-              <InputLabel htmlFor="data">enter amount</InputLabel>
-              <Input name="data" id="data" />
-            </FormControl>
-          </form>
-        </CardContent>
-        <CardActions>
-          <Button id="addFoodSubmit" fullWidth>
-            SUBMIT
-          </Button>
-        </CardActions>
-      </Card>
+      </div>
     )
   }
 }
 
-export default withStyles(styles)(AddFood)
+const mapStateToProps = state => ({
+  food: state.food
+})
 
-// checkbox
+const mapDispatchToProps = dispatch => {
+  return {
+    postFood: food => dispatch(postFood(food))
+  }
+}
 
-/* <FormControlLabel
-  control={<Checkbox value="remember" color="primary" />}
-  label="Remember me"
-/> */
+const ConnectedAddFood = connect(mapStateToProps, mapDispatchToProps)(AddFood)
+export default ConnectedAddFood

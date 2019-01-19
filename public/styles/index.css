@@ -198,7 +198,6 @@ img {
 #navContainer {
   width: 100%;
   display: flex;
-  /* border: 3px solid red; */
   align-items: center;
   margin-right: 1rem;
   justify-content: space-between;
@@ -206,8 +205,6 @@ img {
 
 #navRight #loggedIn a {
   font-weight: 500;
-
-  /* border: 3px solid blue; */
   padding: 0 0.5rem 0 0.5rem;
   /* display: flex;
   justify-content: space-around; */
@@ -215,7 +212,6 @@ img {
 
 #navRight #loggedOut a {
   font-weight: 500;
-  /* border: 3px solid blue; */
   padding: 0 1rem 0 1rem;
   /* display: flex;
   justify-content: space-around; */
@@ -245,7 +241,17 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--darkgray);
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /*
@@ -267,6 +273,10 @@ footer {
 
 .authHeading {
   color: var(--darkgray);
+}
+
+.error {
+  color: var(--lavender);
 }
 
 #loginContainer {
@@ -296,7 +306,7 @@ footer {
 }
 
 /*
- * ==================== LOGIN ====================
+ * ==================== SIGNUP ====================
 */
 
 #signupContainer {
@@ -356,37 +366,45 @@ footer {
 
 #userLeft {
   width: 50%;
-  border: 3px solid red;
 }
 
 #userLeft h4 {
   text-transform: uppercase;
+  padding-top: 1.5rem;
   letter-spacing: 0.2rem;
 }
 
 #userRight {
   width: 50%;
-  border: 3px solid red;
 }
 
-/*
- * ==================== NUTRITION ====================
-*/
+#userRight p {
+  padding-top: 1.5rem;
+}
 
-#nutritionContainer {
-  padding: 2rem 4rem 0 4rem;
-  height: 100vh;
-  background: #02aab0; /* fallback for old browsers */
+#logout {
+  width: 10rem;
+  background: #9796f0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,
-    #00cdac,
-    #02aab0
+    #fbc7d4,
+    #9796f0
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to left,
-    #00cdac,
-    #02aab0
+    #fbc7d4,
+    #9796f0
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: CircularStd, sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+
+  margin-top: 2rem;
+  padding: 0.75rem 0 0.75rem 0;
+}
+#logout a {
+  color: white;
+  text-transform: uppercase;
 }
 
 /*
@@ -394,8 +412,8 @@ footer {
 */
 
 #fitnessContainer {
-  padding: 2rem 5rem 0 5rem;
-  height: 100vh;
+  padding: 1rem 5rem 0 5rem;
+  height: 90vh;
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -407,6 +425,21 @@ footer {
     #4a00e0,
     #8e2de2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#fitnessComponents {
+  display: flex;
+  width: 100%;
+}
+
+.chartContainer {
+  width: 75%;
+  padding-right: 2rem;
+}
+
+.fitnessRight {
+  width: 25%;
+  padding-left: 2rem;
 }
 
 #addMeasurement {
@@ -424,10 +457,6 @@ footer {
 
 #addMeasurementHeader h3 {
   text-transform: uppercase;
-}
-
-#addMeasurementContent {
-  background: var(--lightgray);
 }
 
 #addMeasurementSubmit {
@@ -450,21 +479,43 @@ footer {
  * ==================== NUTRITION ====================
 */
 
-#addFoodHeader {
+#nutritionContainer {
+  padding: 1rem 4rem 0 4rem;
+  height: 90vh;
+  background: #02aab0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #00cdac,
+    #02aab0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #00cdac,
+    #02aab0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#nutritionComponents {
+  display: flex;
+  width: 100%;
+}
+
+#nutritionLeft {
+  width: 70%;
+}
+
+#nutritionRight {
+  width: 30%;
+}
+
+#foodCardHeader {
   background: var(--jade);
   letter-spacing: 0.1rem;
   padding: 1rem 0 1rem 1rem;
-  /* color: white; */
-  /* font-family: CircularStd, sans-serif; */
   font-size: 1rem;
 }
 
-#addFoodHeader h3 {
+#foodCardHeader h3 {
   text-transform: uppercase;
-}
-
-#addFoodContent {
-  background: var(--lightgray);
 }
 
 #addFoodSubmit {
@@ -477,11 +528,16 @@ footer {
   padding: 0.5rem 0 0.5rem 0;
 }
 
-#foodCards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(50px, auto);
-  grid-gap: 2em;
-  padding: 1em;
-  padding-top: 2em;
+#foodListContainer {
+  color: var(--darkgray);
+  margin: 1rem 0 0 1rem;
+}
+
+.foodItem {
+  display: flex;
+  align-items: center;
+}
+
+.foodItem p {
+  margin: 0.5rem;
 }
