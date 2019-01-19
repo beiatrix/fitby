@@ -140,6 +140,12 @@ h4 {
   text-transform: lowercase;
 }
 
+h1 {
+  margin: 2rem 0 2rem 0;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
 a {
   color: var(--darkgray);
   text-transform: lowercase;
@@ -159,6 +165,12 @@ a:hover {
 
 p {
   text-transform: lowercase;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
 }
 
 /*
@@ -287,12 +299,6 @@ footer {
   margin: auto;
 }
 
-#userHome h1 {
-  margin: 2rem 0 2rem 0;
-  font-size: 200%;
-  font-weight: 600;
-}
-
 #userPhoto {
   max-width: 50%;
   height: auto;
@@ -321,6 +327,7 @@ footer {
 */
 
 #nutritionContainer {
+  padding: 2rem 8rem 0 8rem;
   height: 100vh;
   background: #02aab0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -340,6 +347,7 @@ footer {
 */
 
 #fitnessContainer {
+  padding: 2rem 8rem 0 8rem;
   height: 100vh;
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(

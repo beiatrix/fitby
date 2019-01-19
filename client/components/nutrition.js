@@ -20,6 +20,8 @@ const Nutrition = props => {
   return (
     <div id="nutritionContainer">
       <h1>nutrition</h1>
+      <h2>so far, you've eaten 72% healthy!</h2>
+
       <SimplePieChart />
       <div id="foodCards">
         {weekdays.map((day, idx) => {

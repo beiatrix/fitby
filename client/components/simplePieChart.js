@@ -2,19 +2,12 @@ import React, {Component} from 'react'
 import ResponsiveContainer from 'recharts/lib/component/ResponsiveContainer'
 import {PieChart, Pie, Legend, Tooltip} from 'recharts'
 
-const data02 = [
-  {name: 'Group A', value: 2400},
-  {name: 'Group B', value: 4567},
-  {name: 'Group C', value: 1398},
-  {name: 'Group D', value: 9800},
-  {name: 'Group E', value: 3908},
-  {name: 'Group F', value: 4800}
-]
+const data02 = [{name: 'healthy', value: 72}, {name: 'not healthy', value: 28}]
 
 class SimplePieChart extends Component {
   render() {
     return (
-      <ResponsiveContainer width="99%" height={500}>
+      <ResponsiveContainer height={500}>
         <PieChart width={800} height={400}>
           <Pie
             data={data02}
