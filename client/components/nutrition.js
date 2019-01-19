@@ -6,8 +6,29 @@ import {fetchFood} from '../store'
 import {renderByOrder} from 'recharts/lib/util/ReactUtils'
 
 class Nutrition extends Component {
+  constructor() {
+    super()
+    this.calculateHealth = this.calculateHealth.bind(this)
+  }
   async componentDidMount() {
     await this.props.fetchFood()
+  }
+
+  // converts array of food to array of health percentage values
+  calculateHealth(food) {
+    let percentHealthy =
+      food.reduce((acc, el) => {
+        if (el.healthy) {
+          acc++
+        }
+        return acc
+      }, 0) /
+      food.length *
+      100
+    return [
+      {name: 'healthy', value: percentHealthy},
+      {name: 'not-so-healthy', value: 100 - percentHealthy}
+    ]
   }
 
   render() {
@@ -17,9 +38,11 @@ class Nutrition extends Component {
       <div id="nutritionContainer">
         <h1>nutrition</h1>
         <div id="nutritionComponents">
-          <h2>so far, you've eaten 72% healthy!</h2>
+          <h2>
+            so far, you've eaten {this.calculateHealth(food)[0].value}% healthy!
+          </h2>
           <div id="nutritionLeft">
-            <SimplePieChart />
+            <SimplePieChart data={this.calculateHealth(food)} />
           </div>
 
           <div id="nutritionRight">
