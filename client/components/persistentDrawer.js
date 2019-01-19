@@ -60,6 +60,8 @@ const styles = theme => ({
     flexShrink: 0
   },
   drawerPaper: {
+    backgroundColor: '#3b3b3b',
+    // color: 'white',
     width: drawerWidth
   },
   drawerHeader: {
@@ -179,33 +181,28 @@ class PersistentDrawer extends React.Component {
           <div className={classes.drawerHeader}>
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'ltr' ? (
-                <ChevronLeftIcon />
+                <ChevronLeftIcon nativeColor="whitesmoke" />
               ) : (
-                <ChevronRightIcon />
+                <ChevronRightIcon nativeColor="whitesmoke" />
               )}
             </IconButton>
           </div>
           <Divider />
-          <List>
-            {['Fitness', 'Nutrition'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <FitnessCenterIcon /> : <KitchenIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
+          <h3 id="drawerHeader">archives</h3>
           <Divider />
           <List>
-            {['Fitness', 'Nutrition'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <FitnessCenterIcon /> : <KitchenIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
+            <ListItem button>
+              <ListItemIcon>
+                <FitnessCenterIcon nativeColor="whitesmoke" />
+              </ListItemIcon>
+              <h4>Fitness</h4>
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <KitchenIcon nativeColor="whitesmoke" />
+              </ListItemIcon>
+              <h4>Nutrition</h4>
+            </ListItem>
           </List>
         </Drawer>
         <main

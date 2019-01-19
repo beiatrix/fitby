@@ -29,12 +29,12 @@ export const UserHome = props => {
               <p>{user.lastName}</p>
               <p>{user.email}</p>
             </div>
-            <button type="button">
-              <a href="#" onClick={handleClick}>
-                Log Out
-              </a>
-            </button>
           </div>
+          <button type="button">
+            <a href="#" onClick={handleClick}>
+              Log Out
+            </a>
+          </button>
         </div>
       </div>
     </div>
