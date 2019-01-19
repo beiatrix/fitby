@@ -275,6 +275,10 @@ footer {
   color: var(--darkgray);
 }
 
+.error {
+  color: var(--lavender);
+}
+
 #loginContainer {
   padding-top: 1rem;
   height: 100vh;
@@ -302,7 +306,7 @@ footer {
 }
 
 /*
- * ==================== LOGIN ====================
+ * ==================== SIGNUP ====================
 */
 
 #signupContainer {
@@ -379,7 +383,7 @@ footer {
 }
 
 #logout {
-  width: 30%;
+  width: 10rem;
   background: #9796f0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,

@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {addFood} from '../store'
+import {postFood} from '../store'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
-import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Button from '@material-ui/core/Button'
@@ -40,7 +39,11 @@ class AddFood extends Component {
       name: this.state.name,
       healthy: this.state.healthy
     }
-    this.props.addFood(newFood)
+    this.props.postFood(newFood)
+    this.setState({
+      name: '',
+      healthy: false
+    })
   }
 
   render() {
@@ -53,7 +56,12 @@ class AddFood extends Component {
             {/* food input */}
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="food">add food</InputLabel>
-              <Input onChange={this.handleChange} name="food" id="food" />
+              <Input
+                onChange={this.handleChange}
+                name="food"
+                id="food"
+                value={this.state.name}
+              />
             </FormControl>
             {/* healthy? */}
             <FormControlLabel
@@ -78,11 +86,15 @@ class AddFood extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  food: state.food
+})
+
 const mapDispatchToProps = dispatch => {
   return {
-    addFood: food => dispatch(addFood(food))
+    postFood: food => dispatch(postFood(food))
   }
 }
 
-const ConnectedAddFood = connect(null, mapDispatchToProps)(AddFood)
+const ConnectedAddFood = connect(mapStateToProps, mapDispatchToProps)(AddFood)
 export default ConnectedAddFood

@@ -99,7 +99,10 @@ const AuthForm = props => {
           >
             sign up
           </Button>
-          {error && error.response && <div> {error.response.data} </div>}
+          {error &&
+            error.response && (
+              <div className="error"> {error.response.data} </div>
+            )}
         </form>
       </Paper>
     </main>
