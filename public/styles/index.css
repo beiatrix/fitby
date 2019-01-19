@@ -125,7 +125,7 @@ html {
 }
 
 body {
-  background: url('../img/splash-BG-sm.jpg') no-repeat fixed;
+  background: url('../img/splash-lite.jpg') no-repeat fixed;
   background-size: cover;
   font-family: CircularStd, sans-serif;
   color: white;
