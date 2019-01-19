@@ -508,6 +508,10 @@ footer {
   width: 30%;
 }
 
+#foodCard {
+  width: 300px;
+}
+
 #foodCardHeader {
   background: var(--jade);
   letter-spacing: 0.1rem;

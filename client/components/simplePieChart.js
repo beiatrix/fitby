@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import ResponsiveContainer from 'recharts/lib/component/ResponsiveContainer'
 import {PieChart, Pie, Legend, Tooltip} from 'recharts'
-import {connect} from 'react-redux'
-import {fetchFood} from '../store'
 
 const data02 = [
   {name: 'healthy', value: 72},
@@ -10,13 +8,7 @@ const data02 = [
 ]
 
 class SimplePieChart extends Component {
-  async componentDidMount() {
-    await this.props.fetchFood()
-  }
-
   render() {
-    const {food} = this.props
-
     return (
       <ResponsiveContainer width="99%" height={500}>
         <PieChart width={500} height={500} padding={0}>
@@ -35,12 +27,4 @@ class SimplePieChart extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  food: state.food
-})
-
-const mapDispatchToProps = dispatch => ({
-  fetchFood: () => dispatch(fetchFood())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(SimplePieChart)
+export default SimplePieChart

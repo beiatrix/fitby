@@ -1,35 +1,46 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import SimplePieChart from './simplePieChart'
 import FoodCard from './foodCard'
+import {fetchFood} from '../store'
+import {renderByOrder} from 'recharts/lib/util/ReactUtils'
 
-const Nutrition = props => {
-  const {user} = props
+class Nutrition extends Component {
+  async componentDidMount() {
+    await this.props.fetchFood()
+  }
 
-  return (
-    <div id="nutritionContainer">
-      <h1>nutrition</h1>
-      <div id="nutritionComponents">
-        <h2>so far, you've eaten 72% healthy!</h2>
-        <div id="nutritionLeft">
-          <SimplePieChart />
-        </div>
+  render() {
+    const {user, food} = this.props
 
-        <div id="nutritionRight">
-          <FoodCard />
+    return (
+      <div id="nutritionContainer">
+        <h1>nutrition</h1>
+        <div id="nutritionComponents">
+          <h2>so far, you've eaten 72% healthy!</h2>
+          <div id="nutritionLeft">
+            <SimplePieChart />
+          </div>
+
+          <div id="nutritionRight">
+            <FoodCard food={food} />
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 /**
  * CONTAINER
  */
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  }
-}
+const mapStateToProps = state => ({
+  user: state.user,
+  food: state.food
+})
 
-export default connect(mapStateToProps)(Nutrition)
+const mapDispatchToProps = dispatch => ({
+  fetchFood: () => dispatch(fetchFood())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nutrition)

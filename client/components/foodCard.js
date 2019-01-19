@@ -1,9 +1,6 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Card from '@material-ui/core/Card'
 import {withStyles} from '@material-ui/core/styles'
-import {connect} from 'react-redux'
-import {fetchFood} from '../store'
-
 import AddFood from './addFood'
 import FoodItem from './foodItem'
 
@@ -25,38 +22,22 @@ const styles = theme => ({
   }
 })
 
-class FoodCard extends Component {
-  async componentDidMount() {
-    await this.props.fetchFood()
-  }
+const FoodCard = props => {
+  const {classes, food} = props
 
-  render() {
-    const {classes, food} = this.props
-
-    return (
-      <Card id="foodCard">
-        <div id="foodCardHeader">
-          <h3>+ TODAY'S FOOD</h3>
-        </div>
-        <div id="foodListContainer">
-          {food.map(foodItem => {
-            return <FoodItem key={foodItem.id} food={foodItem} />
-          })}
-        </div>
-        <AddFood classes={classes} />
-      </Card>
-    )
-  }
+  return (
+    <Card id="foodCard">
+      <div id="foodCardHeader">
+        <h3>+ TODAY'S FOOD</h3>
+      </div>
+      <div id="foodListContainer">
+        {food.map(foodItem => {
+          return <FoodItem key={foodItem.id} food={foodItem} />
+        })}
+      </div>
+      <AddFood classes={classes} />
+    </Card>
+  )
 }
 
-const mapStateToProps = state => ({
-  food: state.food
-})
-
-const mapDispatchToProps = dispatch => ({
-  fetchFood: () => dispatch(fetchFood())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withStyles(styles)(FoodCard)
-)
+export default withStyles(styles)(FoodCard)
