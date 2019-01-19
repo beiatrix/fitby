@@ -195,6 +195,31 @@ img {
 #nav-brand {
   color: var(--darkgray);
 }
+#navContainer {
+  width: 100%;
+  display: flex;
+  /* border: 3px solid red; */
+  align-items: center;
+  margin-right: 1rem;
+  justify-content: space-between;
+}
+
+#navRight #loggedIn a {
+  font-weight: 500;
+
+  /* border: 3px solid blue; */
+  padding: 0 0.5rem 0 0.5rem;
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+#navRight #loggedOut a {
+  font-weight: 500;
+  /* border: 3px solid blue; */
+  padding: 0 1rem 0 1rem;
+  /* display: flex;
+  justify-content: space-around; */
+}
 
 /*
  * ==================== FOOTER ====================
