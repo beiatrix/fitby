@@ -14,11 +14,12 @@ function isAuthenticated(req, res, next) {
 // GET /api/food
 router.get('/', isAuthenticated, async (req, res, next) => {
   try {
-    //eventually, find all where date === today
-    const foods = await Food.findAll({
+    // this finds all foods by user
+    // eventually, find all where date === today
+    const food = await Food.findAll({
       where: {userId: req.user.id}
     })
-    res.json(foods)
+    res.json(food)
   } catch (err) {
     next(err)
   }

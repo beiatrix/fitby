@@ -527,3 +527,8 @@ footer {
   font-size: 1rem;
   padding: 0.5rem 0 0.5rem 0;
 }
+
+#foodListContainer {
+  color: var(--darkgray);
+  margin: 1rem 0 0 1rem;
+}

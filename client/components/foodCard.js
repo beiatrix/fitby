@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Card from '@material-ui/core/Card'
 import {withStyles} from '@material-ui/core/styles'
 import {connect} from 'react-redux'
-// import {fetchFood} from '../store'
+import {fetchFood} from '../store'
 
 import AddFood from './addFood'
 
@@ -26,17 +26,24 @@ const styles = theme => ({
 
 class FoodCard extends Component {
   async componentDidMount() {
-    // const foods = await this.props.fetchFood()
+    await this.props.fetchFood()
+    console.log('i got food from the server')
   }
 
   render() {
     const {classes} = this.props
-    const foods = this.props.food
-    console.log('in food card component', foods)
+    const food = this.props.food
+    console.log('food is in food card component', food)
+
     return (
       <Card id="foodCard">
         <div id="foodCardHeader">
           <h3>+ TODAY'S FOOD</h3>
+        </div>
+        <div id="foodListContainer">
+          {food.map(foodItem => {
+            return <p key={food.id}>{foodItem.name}</p>
+          })}
         </div>
         <AddFood classes={classes} />
       </Card>
@@ -49,11 +56,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  // fetchFood: () => dispatch(fetchFood())
+  fetchFood: () => dispatch(fetchFood())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withStyles(styles)(FoodCard)
 )
-
-// checkbox
