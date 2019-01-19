@@ -213,6 +213,10 @@ footer {
  * ==================== LOGIN ====================
 */
 
+.authHeading {
+  color: var(--darkgray);
+}
+
 #loginContainer {
   height: 100vh;
 }
@@ -230,6 +234,36 @@ footer {
     #8e2de2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-transform: uppercase;
+  font-family: CircularStd, sans-serif;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 0 1rem 0;
+}
+
+/*
+ * ==================== LOGIN ====================
+*/
+
+#signupContainer {
+  height: 100vh;
+}
+
+#signupSubmit {
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-transform: uppercase;
+  font-family: CircularStd, sans-serif;
   color: white;
   letter-spacing: 0.1rem;
   font-weight: 500;

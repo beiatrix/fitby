@@ -151,12 +151,12 @@ class PersistentDrawer extends React.Component {
             ) : (
               <div>
                 {/* The navbar will show these links before you log in */}
-                <Button color="inherit">
-                  <Link to="/login">Login</Link>
-                </Button>
-                <Button color="inherit">
-                  <Link to="/signup">Sign Up</Link>
-                </Button>
+                {/* <Button color="inherit"> */}
+                <Link to="/login">Login</Link>
+                {/* </Button> */}
+                {/* <Button color="inherit"> */}
+                <Link to="/signup">Sign Up</Link>
+                {/* </Button> */}
               </div>
             )}
           </Toolbar>

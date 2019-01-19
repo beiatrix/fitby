@@ -15,6 +15,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
+import AccountCircle from '@material-ui/icons/AccountCircle'
 
 const styles = theme => ({
   main: {
@@ -38,7 +39,8 @@ const styles = theme => ({
   },
   avatar: {
     margin: theme.spacing.unit,
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: '#9983ee'
+    // backgroundColor: theme.palette.secondary.main
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -53,28 +55,30 @@ const styles = theme => ({
  * COMPONENT
  */
 const AuthForm = props => {
-  const {name, displayName, handleSubmit, error, classes} = props
+  const {name, handleSubmit, error, classes} = props
 
   return (
-    <main id="loginContainer" className={classes.main}>
+    <main id="signupContainer" className={classes.main}>
       <CssBaseline />
       <Paper className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <AccountCircle />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
+        <h1 className="authHeading">sign up</h1>
         <form onSubmit={handleSubmit} name={name} className={classes.form}>
           <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="firstName">first name</InputLabel>
+            <Input id="firstName" name="firstName" type="text" autoFocus />
+          </FormControl>
+
+          <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="lastName">last name</InputLabel>
+            <Input id="lastName" name="lastName" type="text" />
+          </FormControl>
+
+          <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">email</InputLabel>
-            <Input
-              id="email"
-              name="email"
-              type="text"
-              autoComplete="email"
-              autoFocus
-            />
+            <Input id="email" name="email" type="text" autoComplete="email" />
           </FormControl>
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="password">password</InputLabel>
@@ -85,19 +89,16 @@ const AuthForm = props => {
               autoComplete="current-password"
             />
           </FormControl>
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+
           <Button
-            id="loginSubmit"
+            id="signupSubmit"
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
           >
-            Sign in
+            sign up
           </Button>
           {error && error.response && <div> {error.response.data} </div>}
         </form>
@@ -113,18 +114,10 @@ const AuthForm = props => {
  *   function, and share the same Component. This is a good example of how we
  *   can stay DRY with interfaces that are very similar to each other!
  */
-const mapLogin = state => {
-  return {
-    name: 'login',
-    displayName: 'Login',
-    error: state.user.error
-  }
-}
 
 const mapSignup = state => {
   return {
     name: 'signup',
-    displayName: 'Sign Up',
     error: state.user.error
   }
 }
@@ -141,9 +134,6 @@ const mapDispatch = dispatch => {
   }
 }
 
-export const Login = connect(mapLogin, mapDispatch)(
-  withStyles(styles)(AuthForm)
-)
 export const Signup = connect(mapSignup, mapDispatch)(
   withStyles(styles)(AuthForm)
 )
@@ -153,7 +143,6 @@ export const Signup = connect(mapSignup, mapDispatch)(
  */
 AuthForm.propTypes = {
   name: PropTypes.string.isRequired,
-  displayName: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   error: PropTypes.object,
   classes: PropTypes.object.isRequired
