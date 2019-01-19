@@ -105,6 +105,8 @@
   --darkgray: #3b3b3b;
   --lavender: #9983ee;
   --purple: #5734e3;
+  --jade: #479289;
+  --emerald: #0d6166;
 }
 
 /*
@@ -138,6 +140,12 @@ h4 {
   text-transform: lowercase;
 }
 
+h1 {
+  margin: 2rem 0 2rem 0;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
 a {
   color: var(--darkgray);
   text-transform: lowercase;
@@ -157,6 +165,12 @@ a:hover {
 
 p {
   text-transform: lowercase;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
 }
 
 /*
@@ -180,6 +194,31 @@ p {
 }
 #nav-brand {
   color: var(--darkgray);
+}
+#navContainer {
+  width: 100%;
+  display: flex;
+  /* border: 3px solid red; */
+  align-items: center;
+  margin-right: 1rem;
+  justify-content: space-between;
+}
+
+#navRight #loggedIn a {
+  font-weight: 500;
+
+  /* border: 3px solid blue; */
+  padding: 0 0.5rem 0 0.5rem;
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+#navRight #loggedOut a {
+  font-weight: 500;
+  /* border: 3px solid blue; */
+  padding: 0 1rem 0 1rem;
+  /* display: flex;
+  justify-content: space-around; */
 }
 
 /*
@@ -211,8 +250,62 @@ footer {
  * ==================== LOGIN ====================
 */
 
+.authHeading {
+  color: var(--darkgray);
+}
+
 #loginContainer {
   height: 100vh;
+}
+
+#loginSubmit {
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-transform: uppercase;
+  font-family: CircularStd, sans-serif;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 0 1rem 0;
+}
+
+/*
+ * ==================== LOGIN ====================
+*/
+
+#signupContainer {
+  height: 100vh;
+}
+
+#signupSubmit {
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-transform: uppercase;
+  font-family: CircularStd, sans-serif;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 0 1rem 0;
 }
 
 /*
@@ -229,12 +322,6 @@ footer {
   display: flex;
   width: 80vw;
   margin: auto;
-}
-
-#userHome h1 {
-  margin: 2rem 0 2rem 0;
-  font-size: 200%;
-  font-weight: 600;
 }
 
 #userPhoto {
@@ -265,6 +352,7 @@ footer {
 */
 
 #nutritionContainer {
+  padding: 2rem 8rem 0 8rem;
   height: 100vh;
   background: #02aab0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -284,6 +372,7 @@ footer {
 */
 
 #fitnessContainer {
+  padding: 2rem 8rem 0 8rem;
   height: 100vh;
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -328,9 +417,49 @@ footer {
   font-size: 1rem;
   padding: 0.5rem 0 0.5rem 0;
 }
-
+/*
 #addMeasurement h5 {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: var(--purple);
+} */
+
+/*
+ * ==================== NUTRITION ====================
+*/
+
+#addFoodHeader {
+  background: var(--jade);
+  letter-spacing: 0.1rem;
+  padding: 1rem 0 1rem 1rem;
+  /* color: white; */
+  /* font-family: CircularStd, sans-serif; */
+  font-size: 1rem;
+}
+
+#addFoodHeader h3 {
+  text-transform: uppercase;
+}
+
+#addFoodContent {
+  background: var(--lightgray);
+}
+
+#addFoodSubmit {
+  background: var(--emerald);
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+#foodCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(50px, auto);
+  grid-gap: 2em;
+  padding: 1em;
+  padding-top: 2em;
 }

@@ -124,41 +124,47 @@ class PersistentDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Link to="/home">
-              <h2>fitby</h2>
-            </Link>
-            {isLoggedIn ? (
-              <div>
-                {/* The navbar will show these links after you log in */}
-                <Link to="/fitness">
-                  <IconButton color="inherit">
-                    <FitnessCenterIcon />
-                  </IconButton>
-                </Link>
-
-                <Link to="/nutrition">
-                  <IconButton color="inherit">
-                    <KitchenIcon />
-                  </IconButton>
-                </Link>
-
-                <Link to="/profile">
-                  <IconButton color="inherit">
-                    <PersonIcon />
-                  </IconButton>
+            <div id="navContainer">
+              <div id="navLeft">
+                <Link to="/home">
+                  <h2>fitby</h2>
                 </Link>
               </div>
-            ) : (
-              <div>
-                {/* The navbar will show these links before you log in */}
-                <Button color="inherit">
-                  <Link to="/login">Login</Link>
-                </Button>
-                <Button color="inherit">
-                  <Link to="/signup">Sign Up</Link>
-                </Button>
+              <div id="navRight">
+                {isLoggedIn ? (
+                  <div id="loggedIn">
+                    {/* The navbar will show these links after you log in */}
+                    <Link to="/fitness">
+                      <IconButton color="inherit">
+                        <FitnessCenterIcon />
+                      </IconButton>
+                    </Link>
+
+                    <Link to="/nutrition">
+                      <IconButton color="inherit">
+                        <KitchenIcon />
+                      </IconButton>
+                    </Link>
+
+                    <Link to="/profile">
+                      <IconButton color="inherit">
+                        <PersonIcon />
+                      </IconButton>
+                    </Link>
+                  </div>
+                ) : (
+                  <div id="loggedOut">
+                    {/* The navbar will show these links before you log in */}
+                    {/* <Button color="inherit"> */}
+                    <Link to="/login">Login</Link>
+                    {/* </Button> */}
+                    {/* <Button color="inherit"> */}
+                    <Link to="/signup">Sign Up</Link>
+                    {/* </Button> */}
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer
