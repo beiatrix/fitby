@@ -40,8 +40,7 @@ class AddFood extends Component {
       name: this.state.name,
       healthy: this.state.healthy
     }
-    console.log(newFood)
-    // this.props.addFood({name: event.target.name})
+    this.props.addFood(newFood)
   }
 
   render() {
@@ -84,5 +83,6 @@ const mapDispatchToProps = dispatch => {
     addFood: food => dispatch(addFood(food))
   }
 }
+
 const ConnectedAddFood = connect(null, mapDispatchToProps)(AddFood)
 export default ConnectedAddFood

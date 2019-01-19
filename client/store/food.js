@@ -15,9 +15,7 @@ const ADD_FOOD = 'ADD_FOOD'
 //   name: 'banana',
 //   healthy: 'true'
 // }
-const initialState = {
-  foods: []
-}
+const initialState = []
 
 /**
  * ACTION CREATORS
@@ -48,7 +46,7 @@ export const addFood = food => ({
 export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_FOOD:
-      return [...state, {...action.food}]
+      return [...state, action.food]
     default:
       return state
   }
