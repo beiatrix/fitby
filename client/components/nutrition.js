@@ -9,14 +9,15 @@ const Nutrition = props => {
   return (
     <div id="nutritionContainer">
       <h1>nutrition</h1>
-
-      <div id="nutritionLeft">
-        <SimplePieChart />
+      <div id="nutritionComponents">
         <h2>so far, you've eaten 72% healthy!</h2>
-      </div>
+        <div id="nutritionLeft">
+          <SimplePieChart />
+        </div>
 
-      <div id="nutritionRight">
-        <AddFood />
+        <div id="nutritionRight">
+          <AddFood />
+        </div>
       </div>
     </div>
   )

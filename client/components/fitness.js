@@ -17,7 +17,6 @@ const Fitness = props => {
         <div className="chartContainer">
           <SimpleLineChart />
         </div>
-
         <AddMeasurement className="fitnessRight" />
       </div>
       {/* <h2>dailies</h2>
