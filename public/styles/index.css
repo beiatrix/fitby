@@ -234,6 +234,7 @@ img {
 #drawerTitle {
   color: white;
 }
+
 /*
  * ==================== FOOTER ====================
 */
@@ -252,11 +253,12 @@ footer {
 */
 
 #home {
-  height: 100vh;
+  height: 95vh;
   display: flex;
-  margin: auto;
+  /* margin: auto; */
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 /*
@@ -268,6 +270,7 @@ footer {
 }
 
 #loginContainer {
+  padding-top: 1rem;
   height: 100vh;
 }
 
@@ -297,6 +300,7 @@ footer {
 */
 
 #signupContainer {
+  padding-top: 1rem;
   height: 100vh;
 }
 
