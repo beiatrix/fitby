@@ -34,7 +34,126 @@ async function seed() {
     })
   ])
 
+  const measurements = await Promise.all([
+    //1/2
+    Measurement.create({
+      category: 'weight',
+      data: 110.6,
+      createdAt: '2019-01-02 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-02 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/4
+    Measurement.create({
+      category: 'weight',
+      data: 109.6,
+      createdAt: '2019-01-04 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-04 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/5
+    Measurement.create({
+      category: 'weight',
+      data: 109.6,
+      createdAt: '2019-01-05 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-01-05 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/6
+    Measurement.create({
+      category: 'weight',
+      data: 109.6,
+      createdAt: '2019-01-06 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-01-06 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/7
+    Measurement.create({
+      category: 'weight',
+      data: 111.2,
+      createdAt: '2019-01-07 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-07 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/10
+    Measurement.create({
+      category: 'weight',
+      data: 109.2,
+      createdAt: '2019-01-10 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-10 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/19
+    Measurement.create({
+      category: 'weight',
+      data: 108.2,
+      createdAt: '2019-01-19 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-01-19 23:20:30.847-05',
+      userId: 1
+    })
+  ])
+
+  const foods = await Promise.all([
+    Food.create({
+      name: 'oatmeal',
+      healthy: true,
+      userId: 1
+    }),
+    Food.create({
+      name: 'pizza',
+      healthy: false,
+      userId: 1
+    }),
+    Food.create({
+      name: 'smoothie',
+      healthy: true,
+      userId: 1
+    }),
+    Food.create({
+      name: 'acai bowl',
+      healthy: true,
+      userId: 1
+    })
+  ])
+
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${measurements.length} measurements`)
+  console.log(`seeded ${foods.length} foods`)
   console.log(`seeded successfully`)
 }
 
