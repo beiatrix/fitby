@@ -46,8 +46,8 @@ export const gotNewData = measurement => ({
 export const postData = measurement => async dispatch => {
   try {
     //foodInfo param is an object
-    // console.log('in redux', food)
-    const res = await axios.post('/api/food', measurement)
+    console.log('in redux', measurement)
+    const res = await axios.post('/api/measurements', measurement)
     dispatch(gotNewData(res.data))
   } catch (err) {
     console.error(err)
@@ -56,7 +56,7 @@ export const postData = measurement => async dispatch => {
 
 export const fetchMeasurements = () => async dispatch => {
   try {
-    const res = await axios.get('/api/food')
+    const res = await axios.get('/api/measurements')
     dispatch(gotData(res.data))
   } catch (err) {
     console.error(err)

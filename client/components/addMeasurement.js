@@ -11,6 +11,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 import Select from '@material-ui/core/Select'
 import {withStyles} from '@material-ui/core/styles'
+import {postData} from '../store'
+import {connect} from 'react-redux'
 
 class AddMeasurement extends Component {
   constructor() {
@@ -19,27 +21,35 @@ class AddMeasurement extends Component {
       category: '',
       data: 0
     }
-  }
-  state = {
-    type: ''
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value})
   }
 
+  handleSubmit(event) {
+    event.preventDefault()
+    let newMeasurement = {
+      category: this.state.category,
+      data: this.state.data
+    }
+    this.props.postData(newMeasurement)
+  }
+
   render() {
     const {classes} = this.props
 
     return (
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={this.handleSubmit}>
         <CardContent>
           <FormControl margin="normal" fullWidth>
             <InputLabel htmlFor="type">measurement type</InputLabel>
             <Select
               value={this.state.type}
               onChange={this.handleChange}
-              name="type"
+              name="category"
             >
               <MenuItem value="weight">weight</MenuItem>
               <MenuItem value="body fat">body fat percentage</MenuItem>
@@ -52,11 +62,11 @@ class AddMeasurement extends Component {
           </FormControl>
           <FormControl margin="normal" fullWidth>
             <InputLabel htmlFor="data">enter amount</InputLabel>
-            <Input name="data" id="data" />
+            <Input name="data" id="data" onChange={this.handleChange} />
           </FormControl>
         </CardContent>
         <CardActions>
-          <Button id="addMeasurementSubmit" fullWidth>
+          <Button id="addMeasurementSubmit" type="submit" fullWidth>
             SUBMIT
           </Button>
         </CardActions>
@@ -65,4 +75,17 @@ class AddMeasurement extends Component {
   }
 }
 
-export default AddMeasurement
+const mapStateToProps = state => ({
+  measurements: state.measurements
+})
+
+const mapDispatchToProps = dispatch => {
+  return {
+    postData: measurement => dispatch(postData(measurement))
+  }
+}
+
+const ConnectedAddMeasurement = connect(mapStateToProps, mapDispatchToProps)(
+  AddMeasurement
+)
+export default ConnectedAddMeasurement
