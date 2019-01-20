@@ -1,11 +1,7 @@
 import React, {Component} from 'react'
 import Button from '@material-ui/core/Button'
-import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import CardHeader from '@material-ui/core/CardHeader'
-import Grid from '@material-ui/core/Grid'
-import TextField from '@material-ui/core/TextField'
 import Input from '@material-ui/core/Input'
 
 import InputLabel from '@material-ui/core/InputLabel'
@@ -14,7 +10,7 @@ import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 import Select from '@material-ui/core/Select'
-import {withStyles, withTheme} from '@material-ui/core/styles'
+import {withStyles} from '@material-ui/core/styles'
 
 class AddMeasurement extends Component {
   constructor() {

@@ -32,9 +32,11 @@ class AddFood extends Component {
   }
 
   handleCheck(event) {
+    let toggle = !this.state.healthy
     this.setState({
-      healthy: event.target.value
+      healthy: toggle
     })
+    console.log(this.state)
   }
 
   handleChange(event) {
@@ -49,6 +51,7 @@ class AddFood extends Component {
       name: this.state.name,
       healthy: this.state.healthy
     }
+    console.log('BOUT TO SUBMIT', newFood)
     this.props.postFood(newFood)
     this.setState({
       name: '',
