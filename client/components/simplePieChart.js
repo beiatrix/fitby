@@ -11,7 +11,6 @@ const COLORS = ['#81DEC3', '#68A69F']
 class SimplePieChart extends Component {
   render() {
     const {data} = this.props
-    console.log(data)
     return (
       <ResponsiveContainer width="99%" height={500}>
         <PieChart width={500} height={500} padding={0}>
