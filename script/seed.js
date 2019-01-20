@@ -9,6 +9,14 @@ async function seed() {
 
   const users = await Promise.all([
     User.create({
+      firstName: 'Beiatrix',
+      lastName: 'Pedrasa',
+      email: 'bpedrasa@gmail.com',
+      photo:
+        'https://lh3.googleusercontent.com/-_V0z9CJftzE/XANsaJhTT9I/AAAAAAAAFLE/592o5gXRXQoJkLh5QPtzdJmsu1Ca7NRnQCEwYBhgL/w280-h280-p/IMG_7509.JPG',
+      password: '123'
+    }),
+    User.create({
       firstName: 'Cody',
       lastName: 'Pug',
       photo:
@@ -25,21 +33,6 @@ async function seed() {
       password: '123'
     })
   ])
-
-  // const foods = await Promise.all([
-  //   Food.create({
-  //     name: 'banana',
-  //     healthy: true
-  //   }),
-  //   Food.create({
-  //     name: 'oatmeal',
-  //     healthy: true
-  //   }),
-  //   Food.create({
-  //     name: 'cheeseburger & fries',
-  //     healthy: false
-  //   })
-  // ])
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)
