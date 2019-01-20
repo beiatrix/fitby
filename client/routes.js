@@ -11,7 +11,7 @@ import {
   Fitness,
   Dashboard
 } from './components'
-import {me, fetchFood} from './store'
+import {me, fetchFood, fetchMeasurements} from './store'
 
 /**
  * COMPONENT
@@ -19,6 +19,7 @@ import {me, fetchFood} from './store'
 class Routes extends Component {
   async componentDidMount() {
     await this.props.fetchFood()
+    await this.props.fetchMeasurements()
     this.props.loadInitialData()
   }
 
@@ -60,6 +61,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => ({
   fetchFood: () => dispatch(fetchFood()),
+  fetchMeasurements: () => dispatch(fetchMeasurements()),
   loadInitialData: () => dispatch(me())
 })
 

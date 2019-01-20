@@ -5,7 +5,7 @@ import SimpleLineChart from './simpleLineChart'
 import MeasurementCard from './measurementCard'
 
 const Fitness = props => {
-  const {user} = props
+  const {measurements} = props
 
   return (
     <div id="fitnessContainer">
@@ -15,7 +15,7 @@ const Fitness = props => {
       {/* LINE CHART */}
       <div id="fitnessComponents">
         <div className="chartContainer">
-          <SimpleLineChart />
+          <SimpleLineChart measurements={measurements} />
         </div>
         <MeasurementCard className="fitnessRight" />
       </div>
@@ -34,7 +34,7 @@ const Fitness = props => {
  */
 const mapStateToProps = state => {
   return {
-    user: state.user
+    measurements: state.measurements
   }
 }
 
