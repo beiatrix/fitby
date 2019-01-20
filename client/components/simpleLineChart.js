@@ -25,8 +25,8 @@ const SimpleLineChart = props => {
     // 99% per https://github.com/recharts/recharts/issues/172
     <ResponsiveContainer width="99%" height={320}>
       <LineChart data={data}>
-        <XAxis dataKey="name" />
-        <YAxis />
+        <XAxis dataKey="name" stroke="whitesmoke" />
+        <YAxis stroke="whitesmoke" />
         <CartesianGrid vertical={false} strokeDasharray="3 3" />
         <Tooltip />
         <Legend />
