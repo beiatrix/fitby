@@ -5,7 +5,6 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 class FoodItem extends Component {
   render() {
     const {food} = this.props
-    console.log(food)
     return (
       <div className="foodItem">
         {food.healthy ? <FavoriteIcon /> : <FavoriteBorderIcon />}

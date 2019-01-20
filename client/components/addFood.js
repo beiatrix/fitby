@@ -33,7 +33,7 @@ class AddFood extends Component {
 
   handleCheck(event) {
     this.setState({
-      healthy: event.target.value
+      healthy: event.target.checked
     })
   }
 
@@ -50,10 +50,6 @@ class AddFood extends Component {
       healthy: this.state.healthy
     }
     this.props.postFood(newFood)
-    this.setState({
-      name: '',
-      healthy: false
-    })
   }
 
   render() {

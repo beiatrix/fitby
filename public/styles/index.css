@@ -414,7 +414,7 @@ footer {
 
 #fitnessContainer {
   padding: 1rem 5rem 0 5rem;
-  height: 90vh;
+  height: 100vh;
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -482,7 +482,7 @@ footer {
 
 #nutritionContainer {
   padding: 1rem 4rem 0 4rem;
-  height: 90vh;
+  height: 100vh;
   background: #02aab0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,
