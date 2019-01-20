@@ -37,7 +37,10 @@ class Nutrition extends Component {
         <h1>nutrition</h1>
         <div id="nutritionComponents">
           <h2>
-            so far, you've eaten {this.calculateHealth(food)[0].value}% healthy!
+            so far, you've eaten{' '}
+            {isNaN(this.calculateHealth(food)[0].value)
+              ? 0
+              : this.calculateHealth(food)[0].value}% healthy!
           </h2>
           <div id="nutritionLeft">
             <SimplePieChart data={this.calculateHealth(food)} />
