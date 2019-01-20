@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import SimplePieChart from './simplePieChart'
 import FoodCard from './foodCard'
-import {fetchFood} from '../store'
 import {renderByOrder} from 'recharts/lib/util/ReactUtils'
 
 class Nutrition extends Component {
@@ -10,10 +9,6 @@ class Nutrition extends Component {
     super()
     this.calculateHealth = this.calculateHealth.bind(this)
   }
-  async componentDidMount() {
-    await this.props.fetchFood()
-  }
-
   // converts array of food to array of health percentage values
   calculateHealth(food) {
     let percentHealthy = +(
@@ -35,7 +30,7 @@ class Nutrition extends Component {
   }
 
   render() {
-    const {user, food} = this.props
+    const {food} = this.props
 
     return (
       <div id="nutritionContainer">
@@ -61,12 +56,7 @@ class Nutrition extends Component {
  * CONTAINER
  */
 const mapStateToProps = state => ({
-  user: state.user,
   food: state.food
 })
 
-const mapDispatchToProps = dispatch => ({
-  fetchFood: () => dispatch(fetchFood())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Nutrition)
+export default connect(mapStateToProps)(Nutrition)

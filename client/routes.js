@@ -11,13 +11,14 @@ import {
   Fitness,
   Dashboard
 } from './components'
-import {me} from './store'
+import {me, fetchFood} from './store'
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
-  componentDidMount() {
+  async componentDidMount() {
+    await this.props.fetchFood()
     this.props.loadInitialData()
   }
 
@@ -57,13 +58,10 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    loadInitialData() {
-      dispatch(me())
-    }
-  }
-}
+const mapDispatch = dispatch => ({
+  fetchFood: () => dispatch(fetchFood()),
+  loadInitialData: () => dispatch(me())
+})
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
