@@ -341,8 +341,10 @@ footer {
 */
 
 #userHomeContainer {
-  width: 80vw;
+  padding: 1rem 5rem 0 5rem;
   height: 100vh;
+  /* width: 80vw; */
+  /* height: 100vh; */
   margin: auto;
 }
 
@@ -353,12 +355,18 @@ footer {
 }
 
 #userPhoto {
-  max-width: 50%;
-  height: auto;
+  width: 50%;
+  height: 50vh;
+}
+
+#userPhoto img {
+  /* max-width: 100%;
+  height: auto; */
 }
 
 #userInfoContainer {
   width: 50%;
+  height: 50vh;
 }
 
 #userInfo {
