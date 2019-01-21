@@ -8,7 +8,7 @@
 export {default as Navbar} from './navbar'
 export {default as UserHome} from './user-home'
 export {Login} from './login'
-export {Signup} from './signup'
+export {SignUp} from './signUp'
 export {default as Home} from './home'
 export {default as Footer} from './footer'
 export {default as PersistentDrawer} from './persistentDrawer'
