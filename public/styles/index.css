@@ -441,44 +441,31 @@ footer {
 
 #dailies {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }
 
-.dailyRow {
+#dailies .material-icons.md-36 {
+  font-size: 36px;
+}
+
+.daily {
   display: flex;
   align-items: center;
-  margin: 0.25rem 0 0.25rem 0;
+  /* margin: 0.25rem 0 0.25rem 0; */
 }
 
-.dailyLabel {
-  width: 25%;
-}
-
-.dailyLabel h3 {
+.daily h3 {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
 
-.dailyButtonContainer {
-  width: 75%;
-}
-
-.dailyButton {
+/* .dailyButton {
   margin: 0.5rem;
   border: none;
   border-radius: 3px;
   color: var(--lightgray);
   padding: 3rem;
-}
-
-.dailyButton:hover {
-  color: var(--jade);
-  cursor: pointer;
-}
-
-.dailyButton:focus {
-  outline: 0;
-}
+} */
 
 .chartContainer {
   width: 75%;
