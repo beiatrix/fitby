@@ -267,6 +267,15 @@ footer {
   align-items: center;
 }
 
+#home img {
+  padding-right: 2rem;
+}
+
+#subtitle {
+  /* color offset-x offset-y blur-radius */
+  text-shadow: deeppink 0 0 25px, deeppink 0 0 25px;
+}
+
 /*
  * ==================== LOGIN ====================
 */
