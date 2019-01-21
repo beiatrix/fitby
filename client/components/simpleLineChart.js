@@ -8,32 +8,33 @@ import CartesianGrid from 'recharts/lib/cartesian/CartesianGrid'
 import Tooltip from 'recharts/lib/component/Tooltip'
 import Legend from 'recharts/lib/component/Legend'
 
-const data = [
-  {name: 'Mon', Visits: 2200, Orders: 3400},
-  {name: 'Tue', Visits: 1280, Orders: 2398},
-  {name: 'Wed', Visits: 5000, Orders: 4300},
-  {name: 'Thu', Visits: 4780, Orders: 2908},
-  {name: 'Fri', Visits: 5890, Orders: 4800},
-  {name: 'Sat', Visits: 4390, Orders: 3800},
-  {name: 'Sun', Visits: 4490, Orders: 4300}
-]
+// dummy data for reference
+// const data = [
+//   {name: 'Mon', Visits: 2200, Orders: 3400},
+//   {name: 'Tue', Visits: 1280, Orders: 2398},
+//   {name: 'Wed', Visits: 5000, Orders: 4300},
+//   {name: 'Thu', Visits: 4780, Orders: 2908},
+//   {name: 'Fri', Visits: 5890, Orders: 4800},
+//   {name: 'Sat', Visits: 4390, Orders: 3800},
+//   {name: 'Sun', Visits: 4490, Orders: 4300}
+// ]
 
 const SimpleLineChart = props => {
   const {measurements} = props
-  console.log(measurements)
+  console.log('LINE CHART DATA!', measurements)
   return (
     // 99% per https://github.com/recharts/recharts/issues/172
     <ResponsiveContainer width="99%" height={320}>
-      <LineChart data={data}>
+      <LineChart data={measurements}>
         <XAxis dataKey="name" stroke="whitesmoke" />
         <YAxis stroke="whitesmoke" />
         <CartesianGrid vertical={false} strokeDasharray="3 3" />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="Visits" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="weight" stroke="#82ca9d" />
         <Line
           type="monotone"
-          dataKey="Orders"
+          dataKey="waist"
           stroke="#8884d8"
           activeDot={{r: 8}}
         />

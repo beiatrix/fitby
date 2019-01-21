@@ -12,7 +12,7 @@ class Fitness extends Component {
 
   //processes database JSON data into an array that recharts can understand
   //see bottom of this component for example input => output
-  processData(measurements) {
+  processData(data) {
     //helper function formats sequelize createdAt date to readable string
     // input: '2019-01-20T04:20:30.847Z'
     // output: 01/20
@@ -68,7 +68,7 @@ class Fitness extends Component {
         {/* LINE CHART */}
         <div id="fitnessComponents">
           <div className="chartContainer">
-            <SimpleLineChart measurements={processData(measurements)} />
+            <SimpleLineChart measurements={this.processData(measurements)} />
           </div>
           <MeasurementCard className="fitnessRight" />
         </div>
