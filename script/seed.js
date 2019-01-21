@@ -35,6 +35,21 @@ async function seed() {
   ])
 
   const measurements = await Promise.all([
+    // ========== 2018 ==========
+    //12/30
+    // Measurement.create({
+    //   category: 'weight',
+    //   data: 108.6,
+    //   createdAt: '2019-12-30 23:20:30.847-05',
+    //   userId: 1
+    // }),
+    // Measurement.create({
+    //   category: 'waist',
+    //   data: 27.25,
+    //   createdAt: '2019-12-30 23:20:30.847-05',
+    //   userId: 1
+    // }),
+    // ========== 2019 ==========
     //1/2
     Measurement.create({
       category: 'weight',
@@ -45,6 +60,12 @@ async function seed() {
     Measurement.create({
       category: 'waist',
       data: 27.75,
+      createdAt: '2019-01-02 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31,
       createdAt: '2019-01-02 23:20:30.847-05',
       userId: 1
     }),
@@ -61,6 +82,12 @@ async function seed() {
       createdAt: '2019-01-04 23:20:30.847-05',
       userId: 1
     }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31,
+      createdAt: '2019-01-04 23:20:30.847-05',
+      userId: 1
+    }),
     //1/5
     Measurement.create({
       category: 'weight',
@@ -71,6 +98,12 @@ async function seed() {
     Measurement.create({
       category: 'waist',
       data: 27.5,
+      createdAt: '2019-01-05 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31,
       createdAt: '2019-01-05 23:20:30.847-05',
       userId: 1
     }),
@@ -87,6 +120,12 @@ async function seed() {
       createdAt: '2019-01-06 23:20:30.847-05',
       userId: 1
     }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 30.75,
+      createdAt: '2019-01-06 23:20:30.847-05',
+      userId: 1
+    }),
     //1/7
     Measurement.create({
       category: 'weight',
@@ -97,6 +136,12 @@ async function seed() {
     Measurement.create({
       category: 'waist',
       data: 27.75,
+      createdAt: '2019-01-07 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31.5,
       createdAt: '2019-01-07 23:20:30.847-05',
       userId: 1
     }),
@@ -113,6 +158,12 @@ async function seed() {
       createdAt: '2019-01-10 23:20:30.847-05',
       userId: 1
     }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31.5,
+      createdAt: '2019-01-10 23:20:30.847-05',
+      userId: 1
+    }),
     //1/19
     Measurement.create({
       category: 'weight',
@@ -123,6 +174,12 @@ async function seed() {
     Measurement.create({
       category: 'waist',
       data: 27.5,
+      createdAt: '2019-01-19 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 30.75,
       createdAt: '2019-01-19 23:20:30.847-05',
       userId: 1
     })

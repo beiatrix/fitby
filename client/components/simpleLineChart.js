@@ -19,9 +19,28 @@ import Legend from 'recharts/lib/component/Legend'
 //   {name: 'Sun', Visits: 4490, Orders: 4300}
 // ]
 
+const COLORS = ['#82ca9d', '#8884d8']
+
+//util function to get all data keys! one data key => one line in this chart.
+const getDataKeys = data => {
+  //array of all data keys
+  const allKeys = data.reduce((acc, el) => {
+    acc = [...acc, ...Object.keys(el)]
+    return acc
+  }, [])
+  //remove any duplicates
+  const set = new Set(allKeys)
+
+  //return array of all data keys except 'name'
+  return Array.from(set).filter(key => key !== 'name')
+}
+
 const SimpleLineChart = props => {
   const {measurements} = props
+  const dataKeys = getDataKeys(measurements) // an array of all data keys
+
   console.log('LINE CHART DATA!', measurements)
+
   return (
     // 99% per https://github.com/recharts/recharts/issues/172
     <ResponsiveContainer width="99%" height={320}>
@@ -31,13 +50,24 @@ const SimpleLineChart = props => {
         <CartesianGrid vertical={false} strokeDasharray="3 3" />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="weight" stroke="#82ca9d" />
+
+        {dataKeys.map((key, idx) => {
+          return (
+            <Line
+              key={`${key}-${idx}`}
+              type="monotone"
+              dataKey={key}
+              stroke={COLORS[idx % 2]}
+            />
+          )
+        })}
+        {/* <Line type="monotone" dataKey="weight" stroke="#82ca9d" />
         <Line
           type="monotone"
           dataKey="waist"
           stroke="#8884d8"
           activeDot={{r: 8}}
-        />
+        /> */}
       </LineChart>
     </ResponsiveContainer>
   )
