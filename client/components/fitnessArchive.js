@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import SimpleLineChart from './simpleLineChart'
+import StackedBarChart from './stackedBarChart'
 
 class FitnessArchive extends Component {
   constructor() {
@@ -61,7 +62,17 @@ class FitnessArchive extends Component {
     return (
       <div id="fitnessArchiveContainer">
         <h1>archive: fitness</h1>
-        <SimpleLineChart measurements={this.processData(measurements)} />
+        <div id="measurementArchiveContainer">
+          <SimpleLineChart measurements={this.processData(measurements)} />
+        </div>
+        <div id="workoutArchiveContainer">
+          <div id="workoutArchiveLeft">
+            <h2>workout history</h2>
+          </div>
+          <div id="workoutArchiveRight">
+            <StackedBarChart />
+          </div>
+        </div>
       </div>
     )
   }
