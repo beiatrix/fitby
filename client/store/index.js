@@ -5,6 +5,7 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import user from './user'
 import food from './food'
 import measurements from './measurement'
+import daily from './daily'
 
 // total state:
 // {
@@ -12,7 +13,7 @@ import measurements from './measurement'
 //   food: []
 // }
 
-const reducer = combineReducers({user, food, measurements})
+const reducer = combineReducers({user, food, measurements, daily})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )
@@ -22,3 +23,4 @@ export default store
 export * from './user'
 export * from './food'
 export * from './measurement'
+export * from './daily'
