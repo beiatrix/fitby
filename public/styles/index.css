@@ -590,7 +590,7 @@ footer {
 }
 #fitnessArchiveContainer {
   padding: 1rem 4rem 0 4rem;
-  height: 100vh;
+  /* height: 100vh; */
   /* lawrencium */
   background: #0f0c29; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -605,6 +605,14 @@ footer {
     #302b63,
     #0f0c29
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#workoutArchiveContainer {
+  display: flex;
+}
+
+#measurementArchiveContainer {
+  margin-bottom: 2rem;
 }
 
 /*

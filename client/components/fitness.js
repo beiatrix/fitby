@@ -60,6 +60,7 @@ class Fitness extends Component {
 
   render() {
     const {measurements} = this.props
+    const truncatedData = this.processData(measurements).slice(0, 14)
 
     return (
       <div id="fitnessContainer">
@@ -69,7 +70,7 @@ class Fitness extends Component {
         {/* LINE CHART */}
         <div id="fitnessComponents">
           <div className="chartContainer">
-            <SimpleLineChart measurements={this.processData(measurements)} />
+            <SimpleLineChart measurements={truncatedData} />
           </div>
           <MeasurementCard className="fitnessRight" />
         </div>

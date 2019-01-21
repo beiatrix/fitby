@@ -33,3 +33,4 @@ export {default as Dailies} from './dailies'
 
 // ========== FITNESS ARCHIVE ==========
 export {default as FitnessArchive} from './fitnessArchive'
+export {default as StackedBarChart} from './stackedBarChart'
