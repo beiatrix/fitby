@@ -9,7 +9,9 @@ import {
   Home,
   Nutrition,
   Fitness,
-  Dashboard
+  Dashboard,
+  NutritionArchive,
+  FitnessArchive
 } from './components'
 import {me, fetchFood, fetchMeasurements} from './store'
 
@@ -35,8 +37,10 @@ class Routes extends Component {
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/nutrition" component={Nutrition} />
-            <Route path="/fitness" component={Fitness} />
+            <Route exact path="/nutrition" component={Nutrition} />
+            <Route path="/nutrition/archive" component={NutritionArchive} />
+            <Route exact path="/fitness" component={Fitness} />
+            <Route exact path="/fitness/archive" component={FitnessArchive} />
             <Route path="/profile" component={UserHome} />
             <Route path="/" component={Home} />
           </Switch>

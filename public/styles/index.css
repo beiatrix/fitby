@@ -580,3 +580,52 @@ footer {
 .foodItem p {
   margin: 0.5rem;
 }
+
+/*
+ * ==================== FITNESS ARCHIVE ====================
+*/
+
+.archiveLink {
+  color: whitesmoke;
+}
+#fitnessArchiveContainer {
+  padding: 1rem 4rem 0 4rem;
+  height: 100vh;
+  /* lawrencium */
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*
+ * ==================== NUTRITION ARCHIVE ====================
+*/
+
+#nutritionArchiveContainer {
+  padding: 1rem 4rem 0 4rem;
+  height: 100vh;
+  /* moonlit asteroid */
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

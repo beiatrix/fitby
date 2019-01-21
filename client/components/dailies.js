@@ -70,7 +70,7 @@ class Dailies extends Component {
               )}
             </IconButton>
           </div>
-          <h3>WEIGHTS</h3>
+          <h3>STRENGTH TRAINING</h3>
           &nbsp;
           <FitnessCenterIcon />
         </div>
