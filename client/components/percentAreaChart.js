@@ -1,12 +1,32 @@
-const {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} = Recharts
+import React, {Component} from 'react'
+
+import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts'
+
 const data = [
-  {month: '2015.01', a: 4000, b: 2400, c: 2400},
-  {month: '2015.02', a: 3000, b: 1398, c: 2210},
-  {month: '2015.03', a: 2000, b: 9800, c: 2290},
-  {month: '2015.04', a: 2780, b: 3908, c: 2000},
-  {month: '2015.05', a: 1890, b: 4800, c: 2181},
-  {month: '2015.06', a: 2390, b: 3800, c: 2500},
-  {month: '2015.07', a: 3490, b: 4300, c: 2100}
+  //WEEK 1
+  {date: '12/17', healthy: 3, 'not-so-healthy': 5},
+  {date: '12/18', healthy: 2, 'not-so-healthy': 3},
+  {date: '12/19', healthy: 2, 'not-so-healthy': 4},
+  {date: '12/20', healthy: 3, 'not-so-healthy': 3},
+  {date: '12/21', healthy: 2, 'not-so-healthy': 4},
+  {date: '12/22', healthy: 4, 'not-so-healthy': 4},
+  {date: '12/23', healthy: 3, 'not-so-healthy': 2},
+  //WEEK 2
+  {date: '12/24', healthy: 4, 'not-so-healthy': 3},
+  {date: '12/25', healthy: 1, 'not-so-healthy': 3},
+  {date: '12/26', healthy: 4, 'not-so-healthy': 2},
+  {date: '12/27', healthy: 6, 'not-so-healthy': 3},
+  {date: '12/28', healthy: 7, 'not-so-healthy': 2},
+  {date: '12/29', healthy: 3, 'not-so-healthy': 0},
+  {date: '12/30', healthy: 3, 'not-so-healthy': 0},
+  //WEEK 3
+  {date: '12/31', healthy: 6, 'not-so-healthy': 2},
+  {date: '01/01', healthy: 6, 'not-so-healthy': 0},
+  {date: '01/02', healthy: 5, 'not-so-healthy': 2},
+  {date: '01/03', healthy: 5, 'not-so-healthy': 0},
+  {date: '01/04', healthy: 5, 'not-so-healthy': 0},
+  {date: '01/05', healthy: 5, 'not-so-healthy': 0},
+  {date: '01/06', healthy: 4, 'not-so-healthy': 1}
 ]
 
 const getPercent = (value, total) => {
@@ -35,43 +55,37 @@ const renderTooltipContent = o => {
     </div>
   )
 }
-const StackedAreaChart = React.createClass({
+class PercentAreaChart extends Component {
   render() {
     return (
       <AreaChart
-        width={600}
-        height={400}
+        width={1000}
+        height={450}
         data={data}
         stackOffset="expand"
         margin={{top: 10, right: 30, left: 0, bottom: 0}}
       >
-        <XAxis dataKey="month" />
-        <YAxis tickFormatter={toPercent} />
-        <Tooltip content={renderTooltipContent} />
+        <XAxis dataKey="date" stroke="whitesmoke" />
+        <YAxis tickFormatter={toPercent} stroke="whitesmoke" />
+        <Tooltip fill="#ffffff" stroke="gray" content={renderTooltipContent} />
+        {/* <Tooltip /> */}
         <Area
           type="monotone"
-          dataKey="a"
+          dataKey="not-so-healthy"
           stackId="1"
           stroke="#8884d8"
           fill="#8884d8"
         />
         <Area
           type="monotone"
-          dataKey="b"
+          dataKey="healthy"
           stackId="1"
           stroke="#82ca9d"
           fill="#82ca9d"
         />
-        <Area
-          type="monotone"
-          dataKey="c"
-          stackId="1"
-          stroke="#ffc658"
-          fill="#ffc658"
-        />
       </AreaChart>
     )
   }
-})
+}
 
-ReactDOM.render(<StackedAreaChart />, document.getElementById('container'))
+export default PercentAreaChart

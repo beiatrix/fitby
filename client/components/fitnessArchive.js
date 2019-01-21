@@ -1,8 +1,15 @@
 import React, {Component} from 'react'
+import PercentAreaChart from './percentAreaChart'
 
 class FitnessArchive extends Component {
   render() {
-    return <h1>hi</h1>
+    return (
+      <div id="fitnessArchiveContainer">
+        <h1>archive: fitness</h1>
+
+        <PercentAreaChart />
+      </div>
+    )
   }
 }
 
