@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import SimpleLineChart from './simpleLineChart'
 import MeasurementCard from './measurementCard'
+import Dailies from './dailies'
 
 class Fitness extends Component {
   constructor() {
@@ -72,12 +73,9 @@ class Fitness extends Component {
           </div>
           <MeasurementCard className="fitnessRight" />
         </div>
-        {/* <h2>dailies</h2>
-      <div id="dailiesContainer">
-        <h4>CARDIO</h4>
-        <h4>PROTEIN</h4>
-        <h4>YOGA</h4>
-      </div> */}
+
+        <h2>did you work out today?</h2>
+        <Dailies />
       </div>
     )
   }

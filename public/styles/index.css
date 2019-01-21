@@ -428,9 +428,56 @@ footer {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#fitnessContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 #fitnessComponents {
   display: flex;
   width: 100%;
+  margin-bottom: 2rem;
+}
+
+#dailies {
+  display: flex;
+  flex-direction: column;
+}
+
+.dailyRow {
+  display: flex;
+  align-items: center;
+  margin: 0.25rem 0 0.25rem 0;
+}
+
+.dailyLabel {
+  width: 25%;
+}
+
+.dailyLabel h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.dailyButtonContainer {
+  width: 75%;
+}
+
+.dailyButton {
+  margin: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  color: var(--lightgray);
+  padding: 3rem;
+}
+
+.dailyButton:hover {
+  color: var(--jade);
+  cursor: pointer;
+}
+
+.dailyButton:focus {
+  outline: 0;
 }
 
 .chartContainer {
