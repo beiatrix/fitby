@@ -19,8 +19,8 @@ class SimplePieChart extends Component {
             data={data}
             cx={250}
             cy={250}
-            innerRadius={80}
-            outerRadius={240}
+            innerRadius={60}
+            outerRadius={220}
             fill="#82ca9d"
           >
             {data.map((entry, index) => (
