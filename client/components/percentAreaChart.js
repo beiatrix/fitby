@@ -1,6 +1,14 @@
 import React, {Component} from 'react'
 
-import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts'
+import {
+  ResponsiveContainer,
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip
+} from 'recharts'
 
 const data = [
   //WEEK 1
@@ -58,32 +66,38 @@ const renderTooltipContent = o => {
 class PercentAreaChart extends Component {
   render() {
     return (
-      <AreaChart
-        width={1000}
-        height={450}
-        data={data}
-        stackOffset="expand"
-        margin={{top: 10, right: 30, left: 0, bottom: 0}}
-      >
-        <XAxis dataKey="date" stroke="whitesmoke" />
-        <YAxis tickFormatter={toPercent} stroke="whitesmoke" />
-        <Tooltip fill="#ffffff" stroke="gray" content={renderTooltipContent} />
-        {/* <Tooltip /> */}
-        <Area
-          type="monotone"
-          dataKey="healthy"
-          stackId="1"
-          stroke="#82ca9d"
-          fill="#82ca9d"
-        />
-        <Area
-          type="monotone"
-          dataKey="not-so-healthy"
-          stackId="1"
-          stroke="#8884d8"
-          fill="#8884d8"
-        />
-      </AreaChart>
+      <ResponsiveContainer width="99%" height={450}>
+        <AreaChart
+          // width={1000}
+          // height={450}
+          data={data}
+          stackOffset="expand"
+          margin={{top: 10, right: 30, left: 0, bottom: 0}}
+        >
+          <XAxis dataKey="date" stroke="whitesmoke" />
+          <YAxis tickFormatter={toPercent} stroke="whitesmoke" />
+          <Tooltip
+            fill="#ffffff"
+            stroke="gray"
+            content={renderTooltipContent}
+          />
+          {/* <Tooltip /> */}
+          <Area
+            type="monotone"
+            dataKey="healthy"
+            stackId="1"
+            stroke="#82ca9d"
+            fill="#82ca9d"
+          />
+          <Area
+            type="monotone"
+            dataKey="not-so-healthy"
+            stackId="1"
+            stroke="#8884d8"
+            fill="#8884d8"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     )
   }
 }

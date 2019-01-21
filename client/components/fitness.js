@@ -60,6 +60,7 @@ class Fitness extends Component {
 
   render() {
     const {measurements} = this.props
+    //truncate at 14 elements
     const truncatedData = this.processData(measurements).slice(0, 14)
 
     return (

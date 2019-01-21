@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import SimpleLineChart from './simpleLineChart'
 import StackedBarChart from './stackedBarChart'
 
@@ -73,4 +74,13 @@ class FitnessArchive extends Component {
   }
 }
 
-export default FitnessArchive
+/**
+ * CONTAINER
+ */
+const mapStateToProps = state => {
+  return {
+    measurements: state.measurements
+  }
+}
+
+export default connect(mapStateToProps)(FitnessArchive)
