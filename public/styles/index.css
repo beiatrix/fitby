@@ -580,3 +580,11 @@ footer {
 .foodItem p {
   margin: 0.5rem;
 }
+
+/*
+ * ==================== ARCHIVES ====================
+*/
+
+.archiveLink {
+  color: whitesmoke;
+}

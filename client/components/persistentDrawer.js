@@ -190,18 +190,22 @@ class PersistentDrawer extends React.Component {
           <h3 id="drawerHeader">archives</h3>
           <Divider />
           <List>
-            <ListItem button>
-              <ListItemIcon>
-                <FitnessCenterIcon nativeColor="whitesmoke" />
-              </ListItemIcon>
-              <h4>Fitness</h4>
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <KitchenIcon nativeColor="whitesmoke" />
-              </ListItemIcon>
-              <h4>Nutrition</h4>
-            </ListItem>
+            <Link to="/fitness/archive">
+              <ListItem button>
+                <ListItemIcon>
+                  <FitnessCenterIcon nativeColor="whitesmoke" />
+                </ListItemIcon>
+                <h4 className="archiveLink">Fitness</h4>
+              </ListItem>
+            </Link>
+            <Link to="/nutrition/archive">
+              <ListItem button>
+                <ListItemIcon>
+                  <KitchenIcon nativeColor="whitesmoke" />
+                </ListItemIcon>
+                <h4 className="archiveLink">Nutrition</h4>
+              </ListItem>
+            </Link>
           </List>
         </Drawer>
         <main
