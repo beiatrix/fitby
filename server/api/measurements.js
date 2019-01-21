@@ -16,7 +16,8 @@ router.get('/', isAuthenticated, async (req, res, next) => {
   try {
     // this finds all measurements by user
     const measurements = await Measurement.findAll({
-      where: {userId: req.user.id}
+      where: {userId: req.user.id},
+      order: [['createdAt', 'ASC']] // sorts in chronological order :)
     })
     res.json(measurements)
   } catch (err) {

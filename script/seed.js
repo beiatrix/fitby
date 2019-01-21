@@ -34,7 +34,284 @@ async function seed() {
     })
   ])
 
+  const measurements = await Promise.all([
+    // ========== 2018 ==========
+    // 12/25
+    Measurement.create({
+      category: 'weight',
+      data: 111.2,
+      createdAt: '2019-12-25 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 28,
+      createdAt: '2019-12-25 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 30.5,
+      createdAt: '2019-12-25 23:20:30.847-05',
+      userId: 1
+    }),
+    // 12/26
+    Measurement.create({
+      category: 'weight',
+      data: 112.2,
+      createdAt: '2019-12-26 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-12-26 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31.5,
+      createdAt: '2019-12-26 23:20:30.847-05',
+      userId: 1
+    }),
+    // 12/27
+    Measurement.create({
+      category: 'weight',
+      data: 111.2,
+      createdAt: '2019-12-27 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-12-27 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31.5,
+      createdAt: '2019-12-27 23:20:30.847-05',
+      userId: 1
+    }),
+    // 12/28
+    Measurement.create({
+      category: 'weight',
+      data: 109.4,
+      createdAt: '2019-12-28 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-12-28 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31.25,
+      createdAt: '2019-12-28 23:20:30.847-05',
+      userId: 1
+    }),
+    // 12/29
+    Measurement.create({
+      category: 'weight',
+      data: 107.4,
+      createdAt: '2019-12-29 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-12-29 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 30,
+      createdAt: '2019-12-29 23:20:30.847-05',
+      userId: 1
+    }),
+    // 12/30
+    Measurement.create({
+      category: 'weight',
+      data: 108.6,
+      createdAt: '2019-12-30 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.25,
+      createdAt: '2019-12-30 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31,
+      createdAt: '2019-12-30 23:20:30.847-05',
+      userId: 1
+    }),
+    // ========== 2019 ==========
+    //1/2
+    Measurement.create({
+      category: 'weight',
+      data: 110.6,
+      createdAt: '2019-01-02 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-02 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31,
+      createdAt: '2019-01-02 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/4
+    Measurement.create({
+      category: 'weight',
+      data: 109.6,
+      createdAt: '2019-01-04 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-04 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31,
+      createdAt: '2019-01-04 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/5
+    Measurement.create({
+      category: 'weight',
+      data: 109.6,
+      createdAt: '2019-01-05 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-01-05 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31,
+      createdAt: '2019-01-05 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/6
+    Measurement.create({
+      category: 'weight',
+      data: 109.6,
+      createdAt: '2019-01-06 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-01-06 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 30.75,
+      createdAt: '2019-01-06 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/7
+    Measurement.create({
+      category: 'weight',
+      data: 111.2,
+      createdAt: '2019-01-07 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-07 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31.5,
+      createdAt: '2019-01-07 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/10
+    Measurement.create({
+      category: 'weight',
+      data: 109.2,
+      createdAt: '2019-01-10 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.75,
+      createdAt: '2019-01-10 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 31.5,
+      createdAt: '2019-01-10 23:20:30.847-05',
+      userId: 1
+    }),
+    //1/19
+    Measurement.create({
+      category: 'weight',
+      data: 108.2,
+      createdAt: '2019-01-19 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'waist',
+      data: 27.5,
+      createdAt: '2019-01-19 23:20:30.847-05',
+      userId: 1
+    }),
+    Measurement.create({
+      category: 'lower abs',
+      data: 30.75,
+      createdAt: '2019-01-19 23:20:30.847-05',
+      userId: 1
+    })
+  ])
+
+  const foods = await Promise.all([
+    Food.create({
+      name: 'oatmeal',
+      healthy: true,
+      userId: 1
+    }),
+    Food.create({
+      name: 'pizza',
+      healthy: false,
+      userId: 1
+    }),
+    Food.create({
+      name: 'smoothie',
+      healthy: true,
+      userId: 1
+    }),
+    Food.create({
+      name: 'acai bowl',
+      healthy: true,
+      userId: 1
+    })
+  ])
+
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${measurements.length} measurements`)
+  console.log(`seeded ${foods.length} foods`)
   console.log(`seeded successfully`)
 }
 

@@ -8,35 +8,59 @@ import CartesianGrid from 'recharts/lib/cartesian/CartesianGrid'
 import Tooltip from 'recharts/lib/component/Tooltip'
 import Legend from 'recharts/lib/component/Legend'
 
-const data = [
-  {name: 'Mon', Visits: 2200, Orders: 3400},
-  {name: 'Tue', Visits: 1280, Orders: 2398},
-  {name: 'Wed', Visits: 5000, Orders: 4300},
-  {name: 'Thu', Visits: 4780, Orders: 2908},
-  {name: 'Fri', Visits: 5890, Orders: 4800},
-  {name: 'Sat', Visits: 4390, Orders: 3800},
-  {name: 'Sun', Visits: 4490, Orders: 4300}
-]
+// dummy data for reference
+// const data = [
+//   {name: 'Mon', Visits: 2200, Orders: 3400},
+//   {name: 'Tue', Visits: 1280, Orders: 2398},
+//   {name: 'Wed', Visits: 5000, Orders: 4300},
+//   {name: 'Thu', Visits: 4780, Orders: 2908},
+//   {name: 'Fri', Visits: 5890, Orders: 4800},
+//   {name: 'Sat', Visits: 4390, Orders: 3800},
+//   {name: 'Sun', Visits: 4490, Orders: 4300}
+// ]
+
+const COLORS = ['#82ca9d', '#8884d8']
+
+//util function to get all data keys! one data key => one line in this chart.
+const getDataKeys = data => {
+  //array of all data keys
+  const allKeys = data.reduce((acc, el) => {
+    acc = [...acc, ...Object.keys(el)]
+    return acc
+  }, [])
+  //remove any duplicates
+  const set = new Set(allKeys)
+
+  //return array of all data keys except 'name'
+  return Array.from(set).filter(key => key !== 'name')
+}
 
 const SimpleLineChart = props => {
   const {measurements} = props
-  console.log(measurements)
+  const dataKeys = getDataKeys(measurements) // an array of all data keys
+
+  console.log('LINE CHART DATA!', measurements)
+
   return (
     // 99% per https://github.com/recharts/recharts/issues/172
     <ResponsiveContainer width="99%" height={320}>
-      <LineChart data={data}>
-        <XAxis dataKey="name" />
-        <YAxis />
+      <LineChart data={measurements}>
+        <XAxis dataKey="name" stroke="whitesmoke" />
+        <YAxis stroke="whitesmoke" />
         <CartesianGrid vertical={false} strokeDasharray="3 3" />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="Visits" stroke="#82ca9d" />
-        <Line
-          type="monotone"
-          dataKey="Orders"
-          stroke="#8884d8"
-          activeDot={{r: 8}}
-        />
+
+        {dataKeys.map((key, idx) => {
+          return (
+            <Line
+              key={`${key}-${idx}`}
+              type="monotone"
+              dataKey={key}
+              stroke={COLORS[idx % 2]}
+            />
+          )
+        })}
       </LineChart>
     </ResponsiveContainer>
   )

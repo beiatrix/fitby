@@ -5,8 +5,9 @@ const Measurement = db.define('measurement', {
   category: {
     type: Sequelize.ENUM(
       'weight',
-      'body fat',
+      'body fat %',
       'waist',
+      'lower abs',
       'hips',
       'thighs',
       'chest',
