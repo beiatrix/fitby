@@ -47,7 +47,7 @@ class AddMeasurement extends Component {
           <FormControl margin="normal" fullWidth>
             <InputLabel htmlFor="type">measurement type</InputLabel>
             <Select
-              value={this.state.type}
+              value={this.state.category}
               onChange={this.handleChange}
               name="category"
             >
