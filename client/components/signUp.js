@@ -137,7 +137,7 @@ const mapDispatch = dispatch => {
   }
 }
 
-export const Signup = connect(mapSignup, mapDispatch)(
+export const SignUp = connect(mapSignup, mapDispatch)(
   withStyles(styles)(AuthForm)
 )
 
