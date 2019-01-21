@@ -66,8 +66,12 @@ class FitnessArchive extends Component {
           <SimpleLineChart measurements={this.processData(measurements)} />
         </div>
         <div id="workoutArchiveContainer">
-          <h2>workout history</h2>
-          <StackedBarChart />
+          <div id="workoutArchiveLeft">
+            <h2>workout history</h2>
+          </div>
+          <div id="workoutArchiveRight">
+            <StackedBarChart />
+          </div>
         </div>
       </div>
     )
