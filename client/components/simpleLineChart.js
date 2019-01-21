@@ -61,13 +61,6 @@ const SimpleLineChart = props => {
             />
           )
         })}
-        {/* <Line type="monotone" dataKey="weight" stroke="#82ca9d" />
-        <Line
-          type="monotone"
-          dataKey="waist"
-          stroke="#8884d8"
-          activeDot={{r: 8}}
-        /> */}
       </LineChart>
     </ResponsiveContainer>
   )
